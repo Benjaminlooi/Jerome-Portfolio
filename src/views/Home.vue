@@ -11,6 +11,11 @@ export default {
   name: 'home',
   components: {
     IntroFirst
+  },
+  created() {
+    window.onload = () => {
+      console.log('all loaded')
+    }
   }
 }
 </script>

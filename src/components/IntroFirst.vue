@@ -55,9 +55,6 @@ export default {
     }
   },
   created() {
-    window.onload = () => {
-      console.log('all loaded')
-    }
   },
   methods: {
     updateMousePosition(e) {
