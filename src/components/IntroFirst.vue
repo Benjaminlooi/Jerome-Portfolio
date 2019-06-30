@@ -17,7 +17,7 @@
             <img src="../assets/facebook-logo.svg" alt />
           </a>
         </li>
-        <li>
+        <li @mouseover="mouse.hover_medium = true" @mouseleave="mouse.hover_medium = false">
           <a href>
             <img src="../assets/instagram.svg" alt />
           </a>
