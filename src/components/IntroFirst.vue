@@ -1,5 +1,5 @@
 <template>
-  <div class="intro-first" @mousemove="updateMousePosition">
+  <div class="intro-first" @mousemove="updateMousePosition" v-cloak>
     <span class="mouse_deco" :style="mouse_cursor" :class="mouse_cursor_effect"></span>
     <div class="main-copy">
       <span>
@@ -65,6 +65,9 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+[v-cloak] {
+  display: none;
+}
 .intro-first {
   padding: relative;
   width: 100vw;
