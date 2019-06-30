@@ -1,5 +1,5 @@
 <template>
-  <div class="intro-first" @mousemove="updateMousePosition" v-cloak>
+  <div class="intro-first" @mousemove="updateMousePosition">
     <span class="mouse_deco" :style="mouse_cursor" :class="mouse_cursor_effect"></span>
     <div class="main-copy">
       <span>
