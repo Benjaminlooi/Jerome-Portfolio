@@ -54,7 +54,11 @@ export default {
       }
     }
   },
-  created() {},
+  created() {
+    windows.onload = () => {
+      console.log('all loaded')
+    }
+  },
   methods: {
     updateMousePosition(e) {
       this.$set(this.mouse, "x", e.x);
@@ -73,7 +77,7 @@ export default {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-image: url("../assets/jerome_bg.jpg");
+  background-image: url("../assets/jerome_bg2.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
