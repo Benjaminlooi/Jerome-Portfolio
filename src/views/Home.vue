@@ -21,10 +21,6 @@ export default {
     IntroFirst
   },
   created() {
-    window.onload = () => {
-      console.log("all loaded");
-      this.isLoad = true;
-    };
   }
 };
 </script>

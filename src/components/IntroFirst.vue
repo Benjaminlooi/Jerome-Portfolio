@@ -55,6 +55,9 @@ export default {
     }
   },
   created() {
+    window.onload = () => {
+      this.$parent.isLoad = true;
+    };
   },
   methods: {
     updateMousePosition(e) {
