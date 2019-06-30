@@ -55,7 +55,7 @@ export default {
     }
   },
   created() {
-    windows.onload = () => {
+    window.onload = () => {
       console.log('all loaded')
     }
   },
