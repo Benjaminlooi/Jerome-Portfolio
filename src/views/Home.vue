@@ -1,10 +1,12 @@
 <template>
   <div class="home">
-    <transition name="slide-up">
+    <transition name="slide-up" v-on:before-leave="beforeLeave">
       <Loading v-if="!isLoad"></Loading>
     </transition>
     <div>
-      <IntroFirst></IntroFirst>
+      <transition name="intro-first">
+        <IntroFirst v-if="show"></IntroFirst>
+      </transition>
     </div>
   </div>
 </template>
@@ -15,7 +17,9 @@ import Loading from "@/components/Loading";
 
 export default {
   name: "home",
-  data: () => ({}),
+  data: () => ({
+    show: true
+  }),
   components: {
     Loading,
     IntroFirst
@@ -29,6 +33,13 @@ export default {
   methods: {
     slide() {
       this.$store.commit("updateIsLoad");
+    },
+    beforeLeave() {
+      console.log("running before leave");
+      this.show = false;
+      setTimeout(() => {
+        this.show = true;
+      }, 50);
     }
   }
 };
@@ -43,5 +54,14 @@ export default {
 }
 .slide-up-leave-to {
   bottom: 100vh;
+}
+.intro-first-enter-active {
+  transition: transform 1.5s ease-out;
+}
+.intro-first-enter {
+  transform: scale(1.03);
+}
+.intro-first-enter-to {
+  transform: scale(1);
 }
 </style>

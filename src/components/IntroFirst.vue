@@ -10,6 +10,13 @@
       </span>
     </div>
     <div class="name">R. Jerome</div>
+    <div
+      class="menu-icon"
+      @mouseover="mouse.hover_strong = true"
+      @mouseleave="mouse.hover_strong = false"
+    >
+      <img src="../assets/icons8-menu-filled.svg" alt />
+    </div>
     <div class="social-medias">
       <ul>
         <li @mouseover="mouse.hover_medium = true" @mouseleave="mouse.hover_medium = false">
@@ -36,7 +43,8 @@ export default {
       y: -26,
       width: 26,
       height: 26,
-      hover_medium: false
+      hover_medium: false,
+      hover_strong: false
     }
   }),
   computed: {
@@ -50,7 +58,8 @@ export default {
     },
     mouse_cursor_effect: function() {
       return {
-        mouse_deco_enlarge_medium: this.mouse.hover_medium
+        mouse_deco_enlarge_medium: this.mouse.hover_medium,
+        mouse_deco_enlarge_strong: this.mouse.hover_strong
       };
     }
   },
@@ -103,6 +112,10 @@ export default {
   transform: scale(2);
   border: 2px solid #282828;
 }
+.mouse_deco_enlarge_strong {
+  transform: scale(2.3);
+  border: 1.74px solid #282828;
+}
 .main-copy {
   position: absolute;
   top: 87px;
@@ -121,6 +134,14 @@ export default {
   transform-origin: 0 0;
   font-weight: 800;
   font-size: 26px;
+}
+.menu-icon {
+  position: absolute;
+  top: 57px;
+  right: 70px;
+}
+.menu-icon img {
+  width: 40px;
 }
 .social-medias {
   position: absolute;
