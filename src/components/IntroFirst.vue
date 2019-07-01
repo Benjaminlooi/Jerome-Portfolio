@@ -238,5 +238,31 @@ export default {
     transform: skewX(0deg);
   }
 }
+
+@media only screen and (max-width: 900px){
+  .main-copy{
+    top: 50px;
+    left: 30px;
+    transform: scale(.8);
+    transform-origin: left top;
+  }
+  .menu-icon{
+    top:20px;
+    right: 25px;
+    transform: scale(.8);
+    transform-origin: right top;
+  }
+  .name {
+    transform: scale(.8) rotate(-90deg);
+    left: 30px;
+    bottom: 25px;
+  }
+  .social-medias {
+    transform: scale(.9);
+    transform-origin: right bottom;
+    right: 25px;
+    bottom: 40px;
+  }
+}
 </style>
 
