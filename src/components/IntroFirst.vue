@@ -44,6 +44,7 @@
       class="menu-icon"
       @mouseover="mouse.hover_strong = true"
       @mouseleave="mouse.hover_strong = false"
+      @click="showMenu"
     >
       <img src="../assets/icons8-menu-filled.svg" alt />
     </div>
@@ -99,12 +100,15 @@ export default {
     };
   },
   mounted() {
-    console.log(this.$refs);
+    // console.log(this.$refs);
   },
   methods: {
     updateMousePosition(e) {
       this.$set(this.mouse, "x", e.x);
       this.$set(this.mouse, "y", e.y);
+    },
+    showMenu() {
+      this.$store.commit("openMenu");
     }
   }
 };
@@ -128,6 +132,16 @@ export default {
   filter: gray;
   filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
   cursor: none;
+}
+.intro-first::before {
+  content: "";
+  background: url("../assets/noise3.gif");
+  opacity: 0.15;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
 .mouse_deco {
   position: absolute;
