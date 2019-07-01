@@ -6,7 +6,7 @@
     "serve": "vue-cli-service serve",
     "build": "npm i terser@4.0.0 && vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "dev": "vue-cli-service serve & timeout 5 && electron app.js"
+    "dev": "SET \"NODE_ENV=DEV\" && electron app.js"
   },
   "dependencies": {
     "core-js": "^2.6.5",

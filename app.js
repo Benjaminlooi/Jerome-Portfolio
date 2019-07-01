@@ -1,6 +1,4 @@
-const electron = require('electron')
-const app = electron.app
-const BrowserWindow = electron.BrowserWindow
+const {app, BrowserWindow, Menu} = require('electron')
 
 let url
 if (process.env.NODE_ENV === 'DEV') {
@@ -11,5 +9,6 @@ if (process.env.NODE_ENV === 'DEV') {
 
 app.on('ready', () => {
   let window = new BrowserWindow({width: 800, height: 600})
+  window.removeMenu();
   window.loadURL(url)
 })
