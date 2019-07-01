@@ -111,7 +111,7 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:700&display=swap');
+@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:700&display=swap");
 
 .intro-first {
   position: relative;
@@ -152,15 +152,15 @@ export default {
   position: absolute;
   top: 87px;
   left: 90px;
-  font-family: 'Roboto Condensed', sans-serif;
+  font-family: "Roboto Condensed", sans-serif;
   text-transform: uppercase;
-  line-height: 1.1em;
-  font-size: 7.4vh;
+  line-height: 0.9em;
+  font-size: 8.4vh;
   font-weight: 700;
   color: #303030;
 }
 .name {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Times New Roman", Times, serif;
   position: absolute;
   left: 90px;
   bottom: 35px;
@@ -239,26 +239,26 @@ export default {
   }
 }
 
-@media only screen and (max-width: 900px){
-  .main-copy{
+@media only screen and (max-width: 900px) {
+  .main-copy {
     top: 50px;
     left: 30px;
-    transform: scale(.8);
+    transform: scale(0.8);
     transform-origin: left top;
   }
-  .menu-icon{
-    top:20px;
+  .menu-icon {
+    top: 20px;
     right: 25px;
-    transform: scale(.8);
+    transform: scale(0.8);
     transform-origin: right top;
   }
   .name {
-    transform: scale(.8) rotate(-90deg);
+    transform: scale(0.8) rotate(-90deg);
     left: 30px;
     bottom: 25px;
   }
   .social-medias {
-    transform: scale(.9);
+    transform: scale(0.9);
     transform-origin: right bottom;
     right: 25px;
     bottom: 40px;
