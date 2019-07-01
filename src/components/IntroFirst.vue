@@ -191,7 +191,7 @@ export default {
 }
 .spanses span {
   display: inline-block;
-  animation: blur 5s both;
+  animation: blur 5s both, shake 5s 7s forwards infinite;
 }
 @keyframes blur {
   0% {
@@ -215,6 +215,26 @@ export default {
     transform: translate(0);
     filter: blur(0);
     opacity: 1;
+  }
+}
+@keyframes shake {
+  0% {
+    transform: skewX(-7deg);
+  }
+  0.2% {
+    transform: skewX(7deg);
+  }
+  0.4% {
+    transform: skewX(-7deg);
+  }
+  0.6% {
+    transform: skewX(7deg);
+  }
+  0.8% {
+    transform: skewX(0deg);
+  }
+  100% {
+    transform: skewX(0deg);
   }
 }
 </style>
