@@ -192,7 +192,7 @@ export default {
 }
 .spanses span {
   display: inline-block;
-  animation: blur 5s both, shake 5s 7s forwards infinite;
+  animation: blur 2.5s both, shake 5s 3.5s forwards infinite;
 }
 @keyframes blur {
   0% {
