@@ -153,13 +153,14 @@ export default {
   position: absolute;
   top: 87px;
   left: 90px;
-  font-family: impact;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
   text-transform: uppercase;
   line-height: 1.1em;
   font-size: 7.4vh;
   color: #303030;
 }
 .name {
+  font-family: 'Times New Roman', Times, serif;
   position: absolute;
   left: 90px;
   bottom: 35px;
