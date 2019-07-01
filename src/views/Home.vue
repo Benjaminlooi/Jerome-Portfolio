@@ -1,7 +1,7 @@
 <template>
   <div class="home">
     <Loading v-if="!isLoad"></Loading>
-    <div v-else>
+    <div>
       <IntroFirst></IntroFirst>
     </div>
   </div>
@@ -14,11 +14,15 @@ import Loading from "@/components/Loading";
 export default {
   name: "home",
   data: () => ({
-    isLoad: false
   }),
   components: {
     Loading,
     IntroFirst
+  },
+  computed: {
+    isLoad: function() {
+      return this.$store.state.isLoad;
+    }
   },
   created() {
   }

@@ -22,6 +22,8 @@ export default {};
   height: 100vh;
   position: relative;
   display: flex;
+  background-color: #fff;
+  z-index: 999;
 }
 .loading-box {
   // display: inline-block;

@@ -56,7 +56,7 @@ export default {
   },
   created() {
     window.onload = () => {
-      this.$parent.isLoad = true;
+      this.$store.commit("updateIsLoad");
     };
   },
   methods: {
