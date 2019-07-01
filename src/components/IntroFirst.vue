@@ -2,11 +2,41 @@
   <div class="intro-first" @mousemove="updateMousePosition">
     <span class="mouse_deco" :style="mouse_cursor" :class="mouse_cursor_effect"></span>
     <div class="main-copy">
-      <span>
-        I am the
-        <br />president of
-        <br />Uniten's
-        <br />MPP
+      <span ref="spans" class="spanses">
+        <span>I</span>
+        <span>&nbsp;</span>
+        <span>a</span>
+        <span>m</span>
+        <span>&nbsp;</span>
+        <span>t</span>
+        <span>h</span>
+        <span>e</span>
+        <br />
+        <span>p</span>
+        <span>r</span>
+        <span>e</span>
+        <span>s</span>
+        <span>i</span>
+        <span>d</span>
+        <span>e</span>
+        <span>n</span>
+        <span>t</span>
+        <span>&nbsp;</span>
+        <span>o</span>
+        <span>f</span>
+        <br />
+        <span>U</span>
+        <span>n</span>
+        <span>i</span>
+        <span>t</span>
+        <span>e</span>
+        <span>n</span>
+        <span>'</span>
+        <span>s</span>
+        <br />
+        <span>M</span>
+        <span>P</span>
+        <span>P</span>
       </span>
     </div>
     <div class="name">R. Jerome</div>
@@ -67,6 +97,9 @@ export default {
     window.onload = () => {
       this.$store.commit("updateIsLoad");
     };
+  },
+  mounted() {
+    console.log(this.$refs);
   },
   methods: {
     updateMousePosition(e) {
@@ -155,6 +188,34 @@ export default {
 }
 .social-medias a {
   cursor: none;
+}
+.spanses span {
+  display: inline-block;
+  animation: blur 5s both;
+}
+@keyframes blur {
+  0% {
+    transform: scale(3) translate(-94px, -62px);
+    opacity: 0;
+    filter: blur(10px);
+  }
+  30% {
+    opacity: 0.8;
+  }
+  50% {
+    // transform: translate(-19px, 24px);
+    opacity: 0.4;
+  }
+  80% {
+    filter: blur(7px);
+    transform: scale(1);
+    font-size: 7.4vh;
+  }
+  100% {
+    transform: translate(0);
+    filter: blur(0);
+    opacity: 1;
+  }
 }
 </style>
 
