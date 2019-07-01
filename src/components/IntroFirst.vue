@@ -42,16 +42,16 @@ export default {
   computed: {
     mouse_cursor() {
       return {
-        width: this.mouse.width + 'px',
-        height: this.mouse.height + 'px',
+        width: this.mouse.width + "px",
+        height: this.mouse.height + "px",
         left: this.mouse.x - this.mouse.width / 2 + "px",
         top: this.mouse.y - this.mouse.height / 2 + "px"
       };
     },
     mouse_cursor_effect: function() {
-      return{
+      return {
         mouse_deco_enlarge_medium: this.mouse.hover_medium
-      }
+      };
     }
   },
   created() {
@@ -81,6 +81,11 @@ export default {
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  -moz-filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+  -o-filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
+  -webkit-filter: grayscale(100%);
+  filter: gray;
+  filter: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg'><filter id='grayscale'><feColorMatrix type='matrix' values='0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0'/></filter></svg>#grayscale");
   cursor: none;
 }
 .mouse_deco {
