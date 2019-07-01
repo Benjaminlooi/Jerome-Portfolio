@@ -111,9 +111,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-[v-cloak] {
-  display: none;
-}
+@import url('https://fonts.googleapis.com/css?family=Roboto+Condensed:700&display=swap');
+
 .intro-first {
   position: relative;
   width: 100vw;
@@ -153,7 +152,7 @@ export default {
   position: absolute;
   top: 87px;
   left: 90px;
-  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   text-transform: uppercase;
   line-height: 1.1em;
   font-size: 7.4vh;
