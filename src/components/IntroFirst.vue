@@ -13,12 +13,12 @@
     <div class="social-medias">
       <ul>
         <li @mouseover="mouse.hover_medium = true" @mouseleave="mouse.hover_medium = false">
-          <a href>
+          <a href="https://www.facebook.com/rayymond.thomas">
             <img src="../assets/facebook-logo.svg" alt />
           </a>
         </li>
         <li @mouseover="mouse.hover_medium = true" @mouseleave="mouse.hover_medium = false">
-          <a href>
+          <a href="https://www.instagram.com/rayymond.jpg/">
             <img src="../assets/instagram.svg" alt />
           </a>
         </li>
@@ -73,7 +73,7 @@ export default {
   display: none;
 }
 .intro-first {
-  padding: relative;
+  position: relative;
   width: 100vw;
   height: 100vh;
   overflow: hidden;

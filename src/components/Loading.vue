@@ -20,7 +20,7 @@ export default {};
 .loading {
   width: 100vw;
   height: 100vh;
-  position: relative;
+  position: absolute;
   display: flex;
   background-color: #fff;
   z-index: 999;
@@ -38,23 +38,23 @@ export default {};
 }
 .loading-box span:nth-child(1) {
   transform: rotateY(0deg);
-  animation: rotate1 5s ease-out infinite;
+  animation: rotate1 4s ease-out infinite;
 }
 .loading-box span:nth-child(2) {
   transform: rotateY(0deg);
-  animation: rotate2 5s ease-out infinite;
+  animation: rotate2 4s ease-out infinite;
 }
 .loading-box span:nth-child(3) {
   transform: rotateY(0deg);
-  animation: rotate3 5s ease-out infinite;
+  animation: rotate3 4s ease-out infinite;
 }
 .loading-box span:nth-child(4) {
   transform: rotateY(0deg);
-  animation: rotate4 5s ease-out infinite;
+  animation: rotate4 4s ease-out infinite;
 }
 .loading-box span:nth-child(5) {
   transform: rotateY(0deg);
-  animation: rotate5 5s ease-out infinite;
+  animation: rotate5 4s ease-out infinite;
 }
 @keyframes rotate1 {
   40% {
@@ -104,7 +104,7 @@ export default {};
 .loading-box span:nth-last-child(1) {
   transform: rotate(0deg);
   transform-origin: bottom right;
-  animation: balanceRight 5s ease-out infinite;
+  animation: balanceRight 4s ease-out infinite;
 }
 
 @keyframes balanceRight {

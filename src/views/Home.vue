@@ -1,6 +1,8 @@
 <template>
   <div class="home">
-    <Loading v-if="!isLoad"></Loading>
+    <transition name="slide-up">
+      <Loading v-if="!isLoad"></Loading>
+    </transition>
     <div>
       <IntroFirst></IntroFirst>
     </div>
@@ -13,8 +15,7 @@ import Loading from "@/components/Loading";
 
 export default {
   name: "home",
-  data: () => ({
-  }),
+  data: () => ({}),
   components: {
     Loading,
     IntroFirst
@@ -24,10 +25,23 @@ export default {
       return this.$store.state.isLoad;
     }
   },
-  created() {
+  created() {},
+  methods: {
+    slide() {
+      this.$store.commit("updateIsLoad");
+    }
   }
 };
 </script>
 
 <style lang="scss" scoped>
+.slide-up-leave-active {
+  transition: bottom 0.4s ease-in;
+}
+.slide-up-leave {
+  bottom: 0;
+}
+.slide-up-leave-to {
+  bottom: 100vh;
+}
 </style>
