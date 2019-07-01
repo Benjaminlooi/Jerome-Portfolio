@@ -156,6 +156,7 @@ export default {
   text-transform: uppercase;
   line-height: 1.1em;
   font-size: 7.4vh;
+  font-weight: 700;
   color: #303030;
 }
 .name {
