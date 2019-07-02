@@ -7,7 +7,7 @@
       <span>O</span>
       <span>M</span>
       <span>E</span>
-      <p class="loading-text">Loading...</p>
+      <p class="loading-text">Loading</p>
     </div>
   </div>
 </template>
@@ -117,8 +117,31 @@ export default {};
     transform: rotate(45deg);
   }
 }
-p.loading-text{
+p.loading-text {
   font-size: 1em;
   text-align: center;
+}
+.loading-text:after {
+  content: " .";
+  animation: dots 1s steps(5, end) infinite;
+}
+
+@keyframes dots {
+  0%,
+  20% {
+    color: rgba(0, 0, 0, 0);
+    text-shadow: 0.25em 0 0 rgba(0, 0, 0, 0), 0.5em 0 0 rgba(0, 0, 0, 0);
+  }
+  40% {
+    color: black;
+    text-shadow: 0.25em 0 0 rgba(0, 0, 0, 0), 0.5em 0 0 rgba(0, 0, 0, 0);
+  }
+  60% {
+    text-shadow: 0.25em 0 0 black, 0.5em 0 0 rgba(0, 0, 0, 0);
+  }
+  80%,
+  100% {
+    text-shadow: 0.25em 0 0 black, 0.5em 0 0 black;
+  }
 }
 </style>
