@@ -38,9 +38,6 @@ export default {
     }
   },
   watch: {
-    menuIsShow: function(val) {
-      // if(val)
-    }
   },
   created() {
     // console.log(this.menuIsShow)
@@ -80,15 +77,16 @@ export default {
   transform: scale(1);
 }
 
-.menu-transition-enter-active {
-  transition: filter 0.5s ease-out, background-color 0.5s ease-out;
+.menu-transition-enter-active, .menu-transition-leave-active {
+  transition: transform 0.6s;
 }
 .menu-transition-enter {
-  background-color: red;
-  filter: blur(10px);
+  transform: translateY(-100vh);
 }
-.menu-transition-enter-to {
-  background-color: green;
-  filter: blur(0);
+.menu-transition-enter-to, .menu-transition-leave {
+  transform: translateY(0);
+}
+.menu-transition-leave-to {
+  transform: translateY(-100vh);
 }
 </style>
