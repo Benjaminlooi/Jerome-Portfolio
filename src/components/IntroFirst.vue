@@ -40,7 +40,7 @@
       </span>
     </div>
     <div class="name">R. Jerome</div>
-    <MenuIcon/>
+    <MenuIcon noCursor=true></MenuIcon>
     <div class="social-medias">
       <ul>
         <li @mouseover="mouse.hover_medium = true" @mouseleave="mouse.hover_medium = false">

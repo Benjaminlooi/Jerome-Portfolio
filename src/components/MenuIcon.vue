@@ -1,6 +1,7 @@
 <template>
   <div
     class="menu-icon"
+    :class="{'no-cursor': noCursor}"
     @mouseover="toggleHoverStrong(true)"
     @mouseleave="toggleHoverStrong(false)"
     @click="showMenu"
@@ -11,6 +12,14 @@
 
 <script>
 export default {
+  props: {
+    noCursor: {
+      default: false
+    }
+  },
+  // data: () => ({
+  //   noCursor: false
+  // }),
   methods: {
     toggleHoverStrong(x) {
       this.$store.commit("toggleHoverStrong", x);
@@ -29,6 +38,10 @@ export default {
   right: 70px;
   transform: scale(0.8);
   transform-origin: right top;
+  cursor: pointer;
+}
+.no-cursor {
+  cursor: none;
 }
 .menu-icon img {
   width: 40px;
