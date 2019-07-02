@@ -3,9 +3,6 @@
     <transition name="slide-up" v-on:before-leave="beforeLeave">
       <Loading v-if="!isLoad"></Loading>
     </transition>
-    <transition name="menu-transition">
-      <Menu v-if="menuIsShow"></Menu>
-    </transition>
     <div>
       <transition name="intro-first">
         <IntroFirst v-if="show"></IntroFirst>
@@ -16,14 +13,12 @@
 
 <script>
 import Loading from "@/components/Loading";
-import Menu from "@/components/Menu";
 import IntroFirst from "@/components/IntroFirst";
 
 export default {
   name: "home",
   components: {
     Loading,
-    Menu,
     IntroFirst
   },
   data: () => ({
@@ -33,9 +28,6 @@ export default {
     isLoad: function() {
       return this.$store.state.isLoad;
     },
-    menuIsShow: function() {
-      return this.$store.state.menuIsShow;
-    }
   },
   watch: {},
   created() {
@@ -79,18 +71,5 @@ export default {
   transform: scale(1);
 }
 
-.menu-transition-enter-active,
-.menu-transition-leave-active {
-  transition: transform 0.6s;
-}
-.menu-transition-enter {
-  transform: translateY(-100vh);
-}
-.menu-transition-enter-to,
-.menu-transition-leave {
-  transform: translateY(0);
-}
-.menu-transition-leave-to {
-  transform: translateY(-100vh);
-}
+
 </style>

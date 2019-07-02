@@ -17,7 +17,6 @@ export default {};
 </script>
 
 <style lang="scss" scoped>
-@import url("https://fonts.googleapis.com/css?family=Anton");
 .loading {
   width: 100vw;
   height: 100vh;

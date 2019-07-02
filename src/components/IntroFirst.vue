@@ -109,8 +109,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-@import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:700&display=swap");
-
 .intro-first {
   position: relative;
   width: 100vw;
