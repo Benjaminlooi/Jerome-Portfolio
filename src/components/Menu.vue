@@ -1,9 +1,5 @@
 <template>
-  <transition
-    name="menu-transition"
-    @after-enter="showMenuLinks = true"
-    @after-leave="showMenuLinks = false"
-  >
+  <transition name="menu-transition" @after-enter="showMenuLinks = true">
     <div class="menu" v-if="menuIsShow">
       <div class="menu-box">
         <div
@@ -16,12 +12,14 @@
           <img src="../assets/close.svg" alt />
         </div>
         <div class="menu-container">
-          <ul v-if="showMenuLinks" class="menu-links" @click="closeMenu">
+          <ul class="menu-links" :class="{'menu-link-leave': leaving}" v-if="showMenuLinks" @click="closeMenu">
+            <!-- <transition name="menu-links-transition"  @after-leave="closeMenu"> -->
             <li v-for="link in links" :key="link.name">
               <router-link :to="link.path">
                 <span>{{link.name}}</span>
               </router-link>
             </li>
+            <!-- </transition> -->
           </ul>
         </div>
       </div>
@@ -36,6 +34,7 @@ export default {
       menu_icon_hover: false
     },
     showMenuLinks: false,
+    leaving: false,
     links: [
       {
         path: "/",
@@ -57,9 +56,17 @@ export default {
       return this.$store.state.menuIsShow;
     }
   },
+  created() {
+    // console.log(this.$refs.menuLink)
+  },
   methods: {
     closeMenu() {
-      this.$store.commit("closeMenu");
+      this.leaving = true;
+      setTimeout(()=>{
+        this.$store.commit("closeMenu");
+        this.leaving = false;
+        this.showMenuLinks = false;
+      },1)
     }
   }
 };
@@ -108,7 +115,7 @@ ul.menu-links {
   }
 
   li {
-    animation: fade-slide 1s ease-out both;
+    animation: fade-slide 0.8s ease-out both;
   }
 }
 @for $i from 1 through 2 {
@@ -128,6 +135,25 @@ ul.menu-links {
   }
 }
 
+ul.menu-link-leave li{
+  animation: fade-slide-leave 0.3s ease-out both;
+}
+@keyframes fade-slide-leave {
+  from {
+    transform: translateY(0);
+    opacity: 1;
+  }
+  to {
+    transform: translateY(-10px);
+    opacity: 0;
+  }
+}
+@for $i from 1 through 2 {
+  ul.menu-link-leave li:nth-child(#{$i}n) {
+    animation-delay: #{($i - 1) * 0.25}s;
+  }
+}
+
 .menu-container {
   // max-width: 1200px;
   height: 100vh;
@@ -139,16 +165,21 @@ ul.menu-links {
   margin: unset;
 }
 
-.menu-links-transition-enter-active,
-.menu-links-transition-leave-active {
-  color: red;
+.menu-transition-enter-active {
+  transition: transform 0.6s ease;
 }
-.menu-links-transition-leave {
-  color: blue;
+.menu-transition-leave-active {
+  transition: transform 0.6s 0.6s ease;
 }
-.menu-links-transition-enter-to,
-.menu-links-transition-leave-to {
-  color: green;
+.menu-transition-enter {
+  transform: translateY(-100vh);
+}
+.menu-transition-enter-to,
+.menu-transition-leave {
+  transform: translateY(0);
+}
+.menu-transition-leave-to {
+  transform: translateY(-100vh);
 }
 </style>
 

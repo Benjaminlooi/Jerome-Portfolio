@@ -39,19 +39,4 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
   // font: inherit;
   // vertical-align: baseline;
 }
-
-.menu-transition-enter-active,
-.menu-transition-leave-active {
-  transition: transform 0.6s ease;
-}
-.menu-transition-enter {
-  transform: translateY(-100vh);
-}
-.menu-transition-enter-to,
-.menu-transition-leave {
-  transform: translateY(0);
-}
-.menu-transition-leave-to {
-  transform: translateY(-100vh);
-}
 </style>
