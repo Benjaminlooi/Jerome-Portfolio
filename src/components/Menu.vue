@@ -1,5 +1,9 @@
 <template>
-  <transition name="menu-transition">
+  <transition
+    name="menu-transition"
+    @after-enter="showMenuLinks = true"
+    @after-leave="showMenuLinks = false"
+  >
     <div class="menu" v-if="menuIsShow">
       <div class="menu-box">
         <div
@@ -12,17 +16,10 @@
           <img src="../assets/close.svg" alt />
         </div>
         <div class="menu-container">
-          <ul class="menu-links" @click="closeMenu">
-            <transition name="menu-links-transition">
-              <li>
-                <router-link to="/">
-                  <span>HOME</span>
-                </router-link>
-              </li>
-            </transition>
-            <li>
-              <router-link to="/photos">
-                <span>PHOTO ALBUM</span>
+          <ul v-if="showMenuLinks" class="menu-links" @click="closeMenu">
+            <li v-for="link in links" :key="link.name">
+              <router-link :to="link.path">
+                <span>{{link.name}}</span>
               </router-link>
             </li>
           </ul>
@@ -37,7 +34,18 @@ export default {
   data: () => ({
     mouse: {
       menu_icon_hover: false
-    }
+    },
+    showMenuLinks: false,
+    links: [
+      {
+        path: "/",
+        name: "HOME"
+      },
+      {
+        path: "photos",
+        name: "PHOTO ALBUM"
+      }
+    ]
   }),
   computed: {
     menu_icon_hover_effect() {
@@ -98,6 +106,26 @@ ul.menu-links {
   span:hover {
     transform: scale(1.1);
   }
+
+  li {
+    animation: fade-slide 1s ease-out both;
+  }
+}
+@for $i from 1 through 2 {
+  ul.menu-links li:nth-child(#{$i}n) {
+    animation-delay: #{($i - 0.8) * 0.5}s;
+  }
+}
+@keyframes fade-slide {
+  from {
+    transform: translateY(10px);
+    opacity: 0;
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
 
 .menu-container {
@@ -111,12 +139,14 @@ ul.menu-links {
   margin: unset;
 }
 
+.menu-links-transition-enter-active,
 .menu-links-transition-leave-active {
   color: red;
 }
 .menu-links-transition-leave {
   color: blue;
 }
+.menu-links-transition-enter-to,
 .menu-links-transition-leave-to {
   color: green;
 }
