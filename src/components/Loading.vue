@@ -7,6 +7,7 @@
       <span>O</span>
       <span>M</span>
       <span>E</span>
+      <p class="loading-text">Loading...</p>
     </div>
   </div>
 </template>
@@ -101,7 +102,7 @@ export default {};
     transform: rotateY(180deg);
   }
 }
-.loading-box span:nth-last-child(1) {
+.loading-box span:nth-child(6) {
   transform: rotate(0deg);
   transform-origin: bottom right;
   animation: balanceRight 4s ease-out infinite;
@@ -111,8 +112,13 @@ export default {};
   60% {
     transform: rotate(0deg);
   }
-  75%, 80% {
+  75%,
+  80% {
     transform: rotate(45deg);
   }
+}
+p.loading-text{
+  font-size: 1em;
+  text-align: center;
 }
 </style>
