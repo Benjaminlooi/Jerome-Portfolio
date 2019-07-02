@@ -115,17 +115,17 @@ ul.menu-links {
   }
 
   li {
-    animation: fade-slide 0.8s ease-out both;
+    animation: fade-slide 0.4s ease-out both;
   }
 }
 @for $i from 1 through 2 {
   ul.menu-links li:nth-child(#{$i}n) {
-    animation-delay: #{($i - 0.8) * 0.5}s;
+    animation-delay: #{(0.15 * $i) - 0.15}s;
   }
 }
 @keyframes fade-slide {
   from {
-    transform: translateY(10px);
+    transform: translateY(30px);
     opacity: 0;
   }
 
@@ -136,7 +136,7 @@ ul.menu-links {
 }
 
 ul.menu-link-leave li{
-  animation: fade-slide-leave 0.3s ease-out both;
+  animation: fade-slide-leave 0.4s ease-out both;
 }
 @keyframes fade-slide-leave {
   from {
@@ -144,13 +144,13 @@ ul.menu-link-leave li{
     opacity: 1;
   }
   to {
-    transform: translateY(-10px);
+    transform: translateY(30px);
     opacity: 0;
   }
 }
 @for $i from 1 through 2 {
   ul.menu-link-leave li:nth-child(#{$i}n) {
-    animation-delay: #{($i - 1) * 0.25}s;
+    animation-delay: #{($i * -0.15) + 0.3}s;
   }
 }
 
@@ -166,10 +166,10 @@ ul.menu-link-leave li{
 }
 
 .menu-transition-enter-active {
-  transition: transform 0.6s ease;
+  transition: transform 0.4s ease;
 }
 .menu-transition-leave-active {
-  transition: transform 0.6s 0.6s ease;
+  transition: transform 0.4s 0.6s ease;
 }
 .menu-transition-enter {
   transform: translateY(-100vh);
