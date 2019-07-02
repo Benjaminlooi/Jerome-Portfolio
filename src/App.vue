@@ -1,8 +1,6 @@
 <template>
   <div id="app">
-    <transition name="menu-transition">
-      <Menu v-if="menuIsShow"></Menu>
-    </transition>
+      <Menu/>
     <router-view />
   </div>
 </template>
@@ -15,9 +13,6 @@ export default {
     Menu
   },
   computed: {
-    menuIsShow: function() {
-      return this.$store.state.menuIsShow;
-    }
   }
 };
 </script>

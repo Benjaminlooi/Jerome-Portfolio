@@ -1,31 +1,35 @@
 <template>
-  <div class="menu">
-    <div class="menu-box">
-      <div
-        class="menu-icon"
-        :class="menu_icon_hover_effect"
-        @mouseenter="mouse.menu_icon_hover = true"
-        @mouseleave="mouse.menu_icon_hover = false"
-        @click="closeMenu"
-      >
-        <img src="../assets/close.svg" alt />
-      </div>
-      <div class="menu-container">
-        <ul class="menu-links" @click="closeMenu">
-          <li>
-            <router-link to="/">
-              <span>HOME</span>
-            </router-link>
-          </li>
-          <li>
-            <router-link to="/photos">
-              <span>PHOTO ALBUM</span>
-            </router-link>
-          </li>
-        </ul>
+  <transition name="menu-transition">
+    <div class="menu" v-if="menuIsShow">
+      <div class="menu-box">
+        <div
+          class="menu-icon"
+          :class="menu_icon_hover_effect"
+          @mouseenter="mouse.menu_icon_hover = true"
+          @mouseleave="mouse.menu_icon_hover = false"
+          @click="closeMenu"
+        >
+          <img src="../assets/close.svg" alt />
+        </div>
+        <div class="menu-container">
+          <ul class="menu-links" @click="closeMenu">
+            <transition name="menu-links-transition">
+              <li>
+                <router-link to="/">
+                  <span>HOME</span>
+                </router-link>
+              </li>
+            </transition>
+            <li>
+              <router-link to="/photos">
+                <span>PHOTO ALBUM</span>
+              </router-link>
+            </li>
+          </ul>
+        </div>
       </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>
@@ -40,6 +44,9 @@ export default {
       return {
         hover: this.mouse.menu_icon_hover
       };
+    },
+    menuIsShow: function() {
+      return this.$store.state.menuIsShow;
     }
   },
   methods: {
@@ -82,13 +89,13 @@ ul.menu-links {
   font-weight: 700;
   line-height: 0.95em;
 
-  span{
+  span {
     display: inline-block;
     transition: transform 0.6s ease-out;
     transform-origin: center left;
   }
 
-  span:hover{
+  span:hover {
     transform: scale(1.1);
   }
 }
@@ -102,6 +109,16 @@ ul.menu-links {
 .menu-container h1 {
   font-size: 4em;
   margin: unset;
+}
+
+.menu-links-transition-leave-active {
+  color: red;
+}
+.menu-links-transition-leave {
+  color: blue;
+}
+.menu-links-transition-leave-to {
+  color: green;
 }
 </style>
 

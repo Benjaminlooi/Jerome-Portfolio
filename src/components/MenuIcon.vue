@@ -18,7 +18,6 @@ export default {
     }
   },
   // data: () => ({
-  //   noCursor: false
   // }),
   methods: {
     toggleHoverStrong(x) {
