@@ -47,7 +47,7 @@ a, abbr, acronym, address, applet, article, aside, audio, b, big, blockquote, bo
 
 .menu-transition-enter-active,
 .menu-transition-leave-active {
-  transition: transform 0.6s;
+  transition: transform 0.6s ease;
 }
 .menu-transition-enter {
   transform: translateY(-100vh);

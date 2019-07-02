@@ -11,7 +11,7 @@
         <img src="../assets/close.svg" alt />
       </div>
       <div class="menu-container">
-        <ul class="menu-links">
+        <ul class="menu-links" @click="closeMenu">
           <li>
             <router-link to="/">
               <span>HOME</span>

@@ -21,6 +21,9 @@ export default new Vuex.Store({
       state.mouse.x = payload.x;
       state.mouse.y = payload.y;
     },
+    toggleHoverStrong(state, payload){
+      state.mouse.hover_strong = payload;
+    },
     updateIsLoad(state) {
       state.isLoad = true;
     },
@@ -29,7 +32,8 @@ export default new Vuex.Store({
     },
     closeMenu(state) {
       state.menuIsShow = false;
-    }
+    },
+
   },
   actions: {
 

@@ -1,10 +1,17 @@
 <template>
-  
+  <div>
+    <MenuIcon/>
+    <img src="" alt="">
+  </div>
 </template>
 
 <script>
-export default {
+import MenuIcon from "@/components/MenuIcon"
 
+export default {
+  components: {
+    MenuIcon
+  }
 }
 </script>
 

@@ -40,14 +40,7 @@
       </span>
     </div>
     <div class="name">R. Jerome</div>
-    <div
-      class="menu-icon"
-      @mouseover="mouse.hover_strong = true"
-      @mouseleave="mouse.hover_strong = false"
-      @click="showMenu"
-    >
-      <img src="../assets/icons8-menu-filled.svg" alt />
-    </div>
+    <MenuIcon/>
     <div class="social-medias">
       <ul>
         <li @mouseover="mouse.hover_medium = true" @mouseleave="mouse.hover_medium = false">
@@ -67,9 +60,13 @@
 
 <script>
 import {mapState}from 'vuex';
+import MenuIcon from "@/components/MenuIcon"
 
 export default {
   name: "IntroFirst",
+  components: {
+    MenuIcon
+  },
   data: () => ({
     //
   }),
@@ -101,9 +98,6 @@ export default {
     // console.log(this.$refs);
   },
   methods: {
-    showMenu() {
-      this.$store.commit("openMenu");
-    }
   }
 };
 </script>
@@ -175,14 +169,6 @@ export default {
   font-weight: 800;
   font-size: 26px;
 }
-.menu-icon {
-  position: absolute;
-  top: 57px;
-  right: 70px;
-}
-.menu-icon img {
-  width: 40px;
-}
 .social-medias {
   position: absolute;
   bottom: 90px;
@@ -251,12 +237,6 @@ export default {
     left: 30px;
     transform: scale(0.8);
     transform-origin: left top;
-  }
-  .menu-icon {
-    top: 20px;
-    right: 25px;
-    transform: scale(0.8);
-    transform-origin: right top;
   }
   .name {
     transform: scale(0.8) rotate(-90deg);
