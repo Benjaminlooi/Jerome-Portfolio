@@ -85,6 +85,7 @@ ul.menu-links {
   span{
     display: inline-block;
     transition: transform 0.6s ease-out;
+    transform-origin: center left;
   }
 
   span:hover{
