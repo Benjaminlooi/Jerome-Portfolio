@@ -169,7 +169,7 @@ ul.menu-link-leave li{
   transition: transform 0.4s ease;
 }
 .menu-transition-leave-active {
-  transition: transform 0.4s 0.6s ease;
+  transition: transform 0.4s 0.55s ease;
 }
 .menu-transition-enter {
   transform: translateY(-100vh);
