@@ -1,5 +1,5 @@
 <template>
-  <div class="intro-first" @mousemove="updateMousePosition">
+  <div class="intro-first">
     <span class="mouse_deco" :style="mouse_cursor" :class="mouse_cursor_effect"></span>
     <div class="main-copy">
       <span ref="spans" class="spanses">
@@ -66,19 +66,17 @@
 </template>
 
 <script>
+import {mapState}from 'vuex';
+
 export default {
   name: "IntroFirst",
   data: () => ({
-    mouse: {
-      x: -26,
-      y: -26,
-      width: 26,
-      height: 26,
-      hover_medium: false,
-      hover_strong: false
-    }
+    //
   }),
   computed: {
+    ...mapState({
+      mouse: state => state.mouse
+    }),
     mouse_cursor() {
       return {
         width: this.mouse.width + "px",
@@ -103,10 +101,6 @@ export default {
     // console.log(this.$refs);
   },
   methods: {
-    updateMousePosition(e) {
-      this.$set(this.mouse, "x", e.x);
-      this.$set(this.mouse, "y", e.y);
-    },
     showMenu() {
       this.$store.commit("openMenu");
     }

@@ -1,5 +1,5 @@
 <template>
-  <div class="home">
+  <div class="home" @mousemove="updateMousePosition">
     <transition name="slide-up" v-on:before-leave="beforeLeave">
       <Loading v-if="!isLoad"></Loading>
     </transition>
@@ -37,12 +37,14 @@ export default {
       return this.$store.state.menuIsShow;
     }
   },
-  watch: {
-  },
+  watch: {},
   created() {
     // console.log(this.menuIsShow)
   },
   methods: {
+    updateMousePosition(e) {
+      this.$store.commit("updateMousePosition", { x: e.x, y: e.y });
+    },
     slide() {
       this.$store.commit("updateIsLoad");
     },
@@ -77,13 +79,15 @@ export default {
   transform: scale(1);
 }
 
-.menu-transition-enter-active, .menu-transition-leave-active {
+.menu-transition-enter-active,
+.menu-transition-leave-active {
   transition: transform 0.6s;
 }
 .menu-transition-enter {
   transform: translateY(-100vh);
 }
-.menu-transition-enter-to, .menu-transition-leave {
+.menu-transition-enter-to,
+.menu-transition-leave {
   transform: translateY(0);
 }
 .menu-transition-leave-to {
