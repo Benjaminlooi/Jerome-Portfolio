@@ -14,6 +14,7 @@
           class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
           @click="pickImage"
         >Upload</button>
+        <p v-if="isLoading" class="loading-text m-auto">Loading</p>
       </div>
     </div>
     <div class="images-container mx-5">
@@ -33,6 +34,7 @@ export default {
     MenuIcon
   },
   data: () => ({
+    isLoading: true,
     imageName: "",
     imageURL: "",
     imageFiles: "",
@@ -48,6 +50,7 @@ export default {
     onFilePicked(e) {
       const files = e.target.files;
       let file = files[0];
+      this.isLoading = true;
       if (file !== undefined) {
         this.imageName = file.name;
         if (this.imageName.lastIndexOf(".") <= 0) {
@@ -66,8 +69,8 @@ export default {
         });
       } else {
         this.resetImageInputs();
+        this.isLoading = false;
       }
-      //
     },
     uploadImage() {
       console.log("Running uploadImage");
@@ -76,15 +79,9 @@ export default {
       imageRef.put(this.imageFile).then(snapshot => {
         console.log("image uploaded");
         snapshot.ref.getDownloadURL().then(downloadURL => {
-          const bucketName = "r-jerome.appspot.com";
-          const filePath = this.imageName;
           db.collection("images")
             .add({
               downloadURL,
-              // downloadUrl:
-              // `https://firebasestorage.googleapis.com/v0/b/${bucketName}/o/images` +
-              // "%2F" +
-              // `${encodeURIComponent(filePath)}?alt=media`,
               timestamp: Date.now()
             })
             .then(() => {
@@ -95,6 +92,7 @@ export default {
       });
     },
     getImages() {
+      this.isLoading = true;
       let imagesArr = [];
       db.collection("images")
         .get()
@@ -103,6 +101,7 @@ export default {
             imagesArr.push(doc.data());
           });
           this.imagesUrl = imagesArr;
+          this.isLoading = false;
         });
     },
     resetImageInputs() {
@@ -128,7 +127,40 @@ export default {
     }
   }
 }
-@media only screen and (max-width: 600px){
+.imagesLoading {
+  width: 100vw;
+  height: 100vh;
+  position: fixed;
+  display: flex;
+}
+p.loading-text {
+  font-size: 1em;
+  text-align: center;
+}
+.loading-text:after {
+  content: " .";
+  animation: dots 1s steps(5, end) infinite;
+}
+
+@keyframes dots {
+  0%,
+  20% {
+    color: rgba(0, 0, 0, 0);
+    text-shadow: 0.25em 0 0 rgba(0, 0, 0, 0), 0.5em 0 0 rgba(0, 0, 0, 0);
+  }
+  40% {
+    color: black;
+    text-shadow: 0.25em 0 0 rgba(0, 0, 0, 0), 0.5em 0 0 rgba(0, 0, 0, 0);
+  }
+  60% {
+    text-shadow: 0.25em 0 0 black, 0.5em 0 0 rgba(0, 0, 0, 0);
+  }
+  80%,
+  100% {
+    text-shadow: 0.25em 0 0 black, 0.5em 0 0 black;
+  }
+}
+@media only screen and (max-width: 600px) {
   .images-container {
     column-count: 1;
   }

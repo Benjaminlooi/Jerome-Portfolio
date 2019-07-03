@@ -104,7 +104,7 @@ export default {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-image: url("../assets/jerome_bg2.jpg");
+  background-image: url("../assets/jerome_bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;

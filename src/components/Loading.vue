@@ -43,7 +43,7 @@ export default {
 .loading {
   width: 100vw;
   height: 100vh;
-  position: absolute;
+  position: fixed;
   display: flex;
   background-color: #fff;
   z-index: 999;
