@@ -43,6 +43,10 @@ export default {
       {
         path: "photos",
         name: "PHOTO ALBUM"
+      },
+      {
+        path: "countdown",
+        name: "COUNTDOWN"
       }
     ]
   }),
@@ -118,7 +122,7 @@ ul.menu-links {
     animation: fade-slide 0.4s ease-out both;
   }
 }
-@for $i from 1 through 2 {
+@for $i from 1 through 3 {
   ul.menu-links li:nth-child(#{$i}n) {
     animation-delay: #{(0.15 * $i) - 0.15}s;
   }
@@ -148,9 +152,9 @@ ul.menu-link-leave li{
     opacity: 0;
   }
 }
-@for $i from 1 through 2 {
+@for $i from 1 through 3 {
   ul.menu-link-leave li:nth-child(#{$i}n) {
-    animation-delay: #{($i * -0.15) + 0.3}s;
+    animation-delay: #{($i * -0.15) + 0.45}s;
   }
 }
 

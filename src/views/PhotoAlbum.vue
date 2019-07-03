@@ -41,7 +41,7 @@ export default {
     imagesUrl: []
   }),
   created() {
-    // this.getImages();
+    this.getImages();
   },
   methods: {
     pickImage() {
