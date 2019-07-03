@@ -246,5 +246,10 @@ export default {
     bottom: 40px;
   }
 }
+@media only screen and (max-width: 600px) {
+  .mouse_deco {
+    display: none;
+  }
+}
 </style>
 
