@@ -90,11 +90,6 @@ export default {
     }
   },
   created() {
-    let image = new Image();
-    image.src = require("../assets/jerome_bg2.jpg");
-    image.onload = () => {
-      this.$store.commit("updateIsLoading", false);
-    };
   },
   mounted() {
     // console.log(this.$refs);

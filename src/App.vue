@@ -16,6 +16,13 @@ export default {
     Menu
   },
   computed: {},
+  created() {
+    let image = new Image();
+    image.src = require("./assets/jerome_bg2.jpg");
+    image.onload = () => {
+      this.$store.commit("updateIsLoading", false);
+    };
+  },
   methods: {}
 };
 </script>
@@ -25,12 +32,10 @@ export default {
 @import url("https://fonts.googleapis.com/css?family=Anton");
 @import url("https://fonts.googleapis.com/css?family=Roboto+Condensed:400,700&display=swap");
 
-
-
 body {
   font-family: "Roboto Condensed", sans-serif;
   margin: 0;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 a {
   color: inherit;

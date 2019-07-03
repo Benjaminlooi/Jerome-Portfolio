@@ -74,7 +74,7 @@ export default {
 
 <style lang="scss" scoped>
 .menu {
-  position: absolute;
+  position: fixed;
   background-color: #262626;
   z-index: 990;
   height: 100vh;
