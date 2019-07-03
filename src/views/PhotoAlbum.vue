@@ -90,7 +90,8 @@ export default {
         .then(res => {
           // console.log(res.data.data)
           const r = res.data.data;
-          db.collection("images_imgur").doc(r.id)
+          db.collection("images_imgur")
+            .doc(r.id)
             .set({
               name: r.name,
               type: r.type,
@@ -100,7 +101,7 @@ export default {
               size: r.size,
               deletehash: r.deletehash,
               link: r.link,
-              timestamp: r.datatime
+              timestamp: Date.now()
             })
             .then(() => {
               this.resetImageInputs();
