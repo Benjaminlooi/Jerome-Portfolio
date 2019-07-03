@@ -40,7 +40,7 @@
       </span>
     </div>
     <div class="name">R. Jerome</div>
-    <MenuIcon noCursor=true></MenuIcon>
+    <MenuIcon noCursor="true"></MenuIcon>
     <div class="social-medias">
       <ul>
         <li @mouseover="mouse.hover_medium = true" @mouseleave="mouse.hover_medium = false">
@@ -59,8 +59,8 @@
 </template>
 
 <script>
-import {mapState}from 'vuex';
-import MenuIcon from "@/components/MenuIcon"
+import { mapState } from "vuex";
+import MenuIcon from "@/components/MenuIcon";
 
 export default {
   name: "IntroFirst",
@@ -90,15 +90,16 @@ export default {
     }
   },
   created() {
-    window.onload = () => {
+    let image = new Image();
+    image.src = require("../assets/jerome_bg2.jpg");
+    image.onload = () => {
       this.$store.commit("updateIsLoading", false);
     };
   },
   mounted() {
     // console.log(this.$refs);
   },
-  methods: {
-  }
+  methods: {}
 };
 </script>
 
