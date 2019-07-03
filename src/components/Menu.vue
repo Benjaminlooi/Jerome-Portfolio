@@ -1,6 +1,6 @@
 <template>
   <transition name="menu-transition" @after-enter="showMenuLinks = true">
-    <div class="menu" v-if="menuIsShow">
+    <div class="menu inset-0" v-if="menuIsShow">
       <div class="menu-box">
         <div
           class="menu-icon"
