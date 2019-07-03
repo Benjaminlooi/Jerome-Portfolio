@@ -92,6 +92,7 @@ export default {
       });
     },
     getImages() {
+      this.imagesUrl = [];
       this.isLoading = true;
       let imagesArr = [];
       db.collection("images")
