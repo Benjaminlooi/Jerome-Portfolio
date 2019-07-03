@@ -1,22 +1,45 @@
 <template>
-  <div class="loading">
-    <div class="loading-box">
-      <span>J</span>
-      <span>E</span>
-      <span>R</span>
-      <span>O</span>
-      <span>M</span>
-      <span>E</span>
-      <p class="loading-text">Loading</p>
+  <transition name="slide-up" v-on:before-leave="beforeLeave">
+    <div class="loading" v-if="isLoading">
+      <div class="loading-box">
+        <span>J</span>
+        <span>E</span>
+        <span>R</span>
+        <span>O</span>
+        <span>M</span>
+        <span>E</span>
+        <p class="loading-text">Loading</p>
+      </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>
-export default {};
+export default {
+  computed: {
+    isLoading: function() {
+      return this.$store.state.isLoading;
+    }
+  },
+  methods: {
+    beforeLeave() {
+      // console.log("running before leave");
+      Event.$emit("introShow");
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
+.slide-up-leave-active {
+  transition: bottom 0.4s ease-in;
+}
+.slide-up-leave {
+  bottom: 0;
+}
+.slide-up-leave-to {
+  bottom: 100vh;
+}
 .loading {
   width: 100vw;
   height: 100vh;

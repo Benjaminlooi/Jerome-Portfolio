@@ -13,7 +13,7 @@ export default new Vuex.Store({
       hover_medium: false,
       hover_strong: false
     },
-    isLoad: false,
+    isLoading: true,
     menuIsShow: false
   },
   mutations: {
@@ -24,8 +24,8 @@ export default new Vuex.Store({
     toggleHoverStrong(state, payload){
       state.mouse.hover_strong = payload;
     },
-    updateIsLoad(state) {
-      state.isLoad = true;
+    updateIsLoading(state, payload) {
+      state.isLoading = payload;
     },
     openMenu(state) {
       state.menuIsShow = true;

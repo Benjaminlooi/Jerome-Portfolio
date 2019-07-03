@@ -91,7 +91,7 @@ export default {
   },
   created() {
     window.onload = () => {
-      this.$store.commit("updateIsLoad");
+      this.$store.commit("updateIsLoading", false);
     };
   },
   mounted() {
