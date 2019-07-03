@@ -19,7 +19,7 @@
     </div>
     <div class="images-container mx-5">
       <div class="isRayImage w-full mb-5" v-for="(image, index) in imagesUrl" :key="index">
-        <img :src="image.downloadURL" alt />
+        <img :src="image.link" alt />
       </div>
     </div>
   </div>
@@ -27,7 +27,8 @@
 
 <script>
 import MenuIcon from "@/components/MenuIcon";
-import { db, storage } from "@/plugins/firebase";
+import { db } from "@/plugins/firebase";
+const axios = require("axios");
 
 export default {
   components: {
@@ -37,14 +38,14 @@ export default {
     isLoading: true,
     imageName: "",
     imageURL: "",
-    imageFiles: "",
     imagesUrl: []
   }),
   created() {
-    this.getImages();
+    // this.getImages();
   },
   methods: {
     pickImage() {
+      this.resetImageInputs();
       this.$refs.imageInput.click();
     },
     onFilePicked(e) {
@@ -74,28 +75,48 @@ export default {
     },
     uploadImage() {
       console.log("Running uploadImage");
-      const storageRef = storage.ref();
-      const imageRef = storageRef.child(`image/${this.imageName}`);
-      imageRef.put(this.imageFile).then(snapshot => {
-        console.log("image uploaded");
-        snapshot.ref.getDownloadURL().then(downloadURL => {
-          db.collection("images")
-            .add({
-              downloadURL,
+      const imgurUploadApiUrl = "https://api.imgur.com/3/upload";
+      const clientID = "04a91bbb323978c";
+      var fd = new FormData();
+      fd.append("image", this.imageFile);
+      fd.append("name", this.imageName);
+      // fd.append("type", "URL");
+      axios
+        .post(imgurUploadApiUrl, fd, {
+          headers: {
+            Authorization: "Client-ID " + clientID
+          }
+        })
+        .then(res => {
+          // console.log(res.data.data)
+          const r = res.data.data;
+          db.collection("images_imgur")
+            .doc(r.id)
+            .set({
+              name: r.name,
+              type: r.type,
+              width: r.width,
+              height: r.height,
+              id: r.id,
+              size: r.size,
+              deletehash: r.deletehash,
+              link: r.link,
               timestamp: Date.now()
             })
             .then(() => {
               this.resetImageInputs();
               this.getImages();
             });
+        })
+        .catch(err => {
+          console.log("Error: ", err);
         });
-      });
     },
     getImages() {
       this.imagesUrl = [];
       this.isLoading = true;
       let imagesArr = [];
-      db.collection("images")
+      db.collection("images_imgur")
         .get()
         .then(snap => {
           snap.forEach(doc => {
