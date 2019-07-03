@@ -7,7 +7,7 @@
       </div>
       <div class="mx-auto">
         <div v-for="item in countdown" :key="item.name" class="mb-2">
-          <h1>{{item.name}}</h1>
+          <h1>{{item.name}}'s guess</h1>
           <flip-countdown :deadline="item.breakup_date"></flip-countdown>
         </div>
       </div>
