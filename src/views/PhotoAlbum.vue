@@ -23,7 +23,7 @@
       </div>
     </div>
     <div class="absolute inset-0" v-if="uploadModal">
-      <div class="fixed max-w-sm w-full rounded shadow-lg m-auto inset-x-0 bg-gray-100 mt-6">
+      <div class="fixed max-w-sm w-full rounded shadow-lg m-auto inset-x-0 bg-gray-100 sm:mt-6">
         <img :src="this.imageURL" alt class="w-full" />
         <div class="px-6 py-4">
           <div class="font-bold text-xl mb-2">{{this.imageName}}</div>
