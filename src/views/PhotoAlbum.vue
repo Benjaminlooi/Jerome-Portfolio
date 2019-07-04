@@ -22,6 +22,22 @@
         <img :src="image.link" alt />
       </div>
     </div>
+    <div class="absolute inset-0" v-if="uploadModal">
+      <div class="fixed max-w-sm w-full rounded shadow-lg m-auto inset-x-0 bg-gray-100 mt-6">
+        <img :src="this.imageURL" alt class="w-full" />
+        <div class="px-6 py-4">
+          <div class="font-bold text-xl mb-2">{{this.imageName}}</div>
+        <button
+          class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded mr-3"
+          @click="uploadImage"
+        >Upload</button>
+        <button
+          class="bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-gray-500 rounded"
+          @click="closeModal"
+        >Cancel</button>
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
@@ -36,6 +52,7 @@ export default {
   },
   data: () => ({
     isLoading: true,
+    uploadModal: false,
     imageName: "",
     imageURL: "",
     imagesUrl: []
@@ -44,6 +61,10 @@ export default {
     this.getImages();
   },
   methods: {
+    closeModal() {
+      this.resetImageInputs();
+      this.uploadModal = false;
+    },
     pickImage() {
       this.resetImageInputs();
       this.$refs.imageInput.click();
@@ -66,7 +87,8 @@ export default {
           // console.log(this.imageURL);
           // console.log(this.imageFile);
 
-          this.uploadImage();
+          this.$refs.imageInput.value = null;
+          this.uploadModal = true;
         });
       } else {
         this.resetImageInputs();
@@ -104,6 +126,8 @@ export default {
               timestamp: Date.now()
             })
             .then(() => {
+              this.uploadModal = false;
+
               this.resetImageInputs();
               this.getImages();
             });
