@@ -23,18 +23,20 @@
       </div>
     </div>
     <div class="absolute inset-0" v-if="uploadModal">
-      <div class="fixed max-w-sm w-full rounded shadow-lg m-auto inset-x-0 bg-gray-100 sm:mt-6">
+      <div
+        class="fixed max-w-sm w-full h-full overflow-x-hidden overflow-y-scroll rounded shadow-lg m-auto inset-x-0 bg-gray-100 sm:my-6"
+      >
         <img :src="this.imageURL" alt class="w-full" />
-        <div class="px-6 py-4">
+        <div class="px-6 pt-4 pb-10">
           <div class="font-bold text-xl mb-2">{{this.imageName}}</div>
-        <button
-          class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded mr-3"
-          @click="uploadImage"
-        >{{this.uploadingText}}</button>
-        <button
-          class="bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-gray-500 rounded"
-          @click="closeModal"
-        >Cancel</button>
+          <button
+            class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded mr-3"
+            @click="uploadImage"
+          >{{this.uploadingText}}</button>
+          <button
+            class="bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-gray-500 rounded"
+            @click="closeModal"
+          >Cancel</button>
         </div>
       </div>
     </div>
@@ -98,7 +100,7 @@ export default {
       }
     },
     uploadImage() {
-      this.uploadingText = "Uploading..."
+      this.uploadingText = "Uploading...";
       console.log("Running uploadImage");
       const imgurUploadApiUrl = "https://api.imgur.com/3/image";
       const clientID = "04a91bbb323978c";
