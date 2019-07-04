@@ -45,4 +45,10 @@ export default {
 .menu-icon img {
   width: 40px;
 }
+@media only screen and (max-width: 600px){
+  .menu-icon{
+    top: 20px;
+    right: 25px;
+  }
+}
 </style>
