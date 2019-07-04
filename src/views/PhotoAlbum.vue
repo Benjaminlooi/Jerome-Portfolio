@@ -75,7 +75,7 @@ export default {
     },
     uploadImage() {
       console.log("Running uploadImage");
-      const imgurUploadApiUrl = "https://api.imgur.com/3/upload";
+      const imgurUploadApiUrl = "https://api.imgur.com/3/image";
       const clientID = "04a91bbb323978c";
       var fd = new FormData();
       fd.append("image", this.imageFile);
