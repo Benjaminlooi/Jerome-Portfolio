@@ -3,7 +3,7 @@
     <MenuIcon />
     <div class="flex flex-col mt-12">
       <div class="container mx-auto py-5">
-        <h1 class="text-4xl">Guessing Jerome's breakup date...</h1>
+        <h1 class="text-4xl">Jerome's breakup prediction...</h1>
       </div>
       <div class="mx-auto">
         <div v-for="item in countdown" :key="item.name" class="mb-2">
@@ -28,19 +28,19 @@ export default {
     countdown: [
       {
         name: "Ben",
-        breakup_date: "2019-12-25 00:00:00"
+        breakup_date: "2019-8-15 23:30:00"
       },
       {
         name: "Nigel",
-        breakup_date: "2019-11-25 00:32:52"
+        breakup_date: "2019-08-30 00:32:52"
       },
       {
         name: "Max",
-        breakup_date: "2019-10-05 14:00:32"
+        breakup_date: "2020-03-14 14:00:32"
       },
       {
         name: "Ashwin",
-        breakup_date: "2019-12-27 12:30:12"
+        breakup_date: "2020-04-02 12:30:12"
       }
     ]
   })
