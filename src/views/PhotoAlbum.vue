@@ -30,7 +30,7 @@
         <button
           class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded mr-3"
           @click="uploadImage"
-        >Upload</button>
+        >{{this.uploadingText}}</button>
         <button
           class="bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-gray-500 rounded"
           @click="closeModal"
@@ -53,6 +53,7 @@ export default {
   data: () => ({
     isLoading: true,
     uploadModal: false,
+    uploadingText: "Upload",
     imageName: "",
     imageURL: "",
     imagesUrl: []
@@ -63,6 +64,7 @@ export default {
   methods: {
     closeModal() {
       this.resetImageInputs();
+      this.isLoading = false;
       this.uploadModal = false;
     },
     pickImage() {
@@ -96,6 +98,7 @@ export default {
       }
     },
     uploadImage() {
+      this.uploadingText = "Uploading..."
       console.log("Running uploadImage");
       const imgurUploadApiUrl = "https://api.imgur.com/3/image";
       const clientID = "04a91bbb323978c";
@@ -154,6 +157,7 @@ export default {
       this.imageName = "";
       this.imageURL = "";
       this.imageFile = "";
+      this.uploadingText = "Upload";
     }
   }
 };
