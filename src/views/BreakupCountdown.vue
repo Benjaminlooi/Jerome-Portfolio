@@ -16,7 +16,7 @@
 </template>
 
 <script>
-import MenuIcon from "@/components/MenuIcon";
+import MenuIcon from "@/components/TheMenuIcon";
 import FlipCountdown from "vue2-flip-countdown";
 
 export default {
