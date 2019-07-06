@@ -102,16 +102,20 @@ export default {
 }
 .i-am-text{
   font-size: 8em;
-  top: 22%;
+  top: 20%;
 }
 .the-text {
   font-size: 10em;
-  bottom: 20%;
+  bottom: 15%;
 }
 
 @media only screen and (max-width: 600px){
   .intro-second {
      font-size: 10px;
+  }
+  .the-text{
+    font-size: 6em;
+    bottom: 25%;
   }
 }
 </style>
