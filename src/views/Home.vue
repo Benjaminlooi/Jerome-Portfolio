@@ -3,18 +3,21 @@
     <div class="home" v-if="show" @mousemove="updateMousePosition">
       <div>
         <IntroFirst></IntroFirst>
+        <IntroSecond/>
       </div>
     </div>
   </transition>
 </template>
 
 <script>
-import IntroFirst from "@/components/IntroFirst";
+import IntroFirst from "@/components/HomeIntroFirst";
+import IntroSecond from "@/components/HomeIntroSecond";
 
 export default {
   name: "home",
   components: {
-    IntroFirst
+    IntroFirst,
+    IntroSecond
   },
   data: () => ({
     show: true
@@ -31,7 +34,7 @@ export default {
   },
   methods: {
     updateMousePosition(e) {
-      this.$store.commit("updateMousePosition", { x: e.x, y: e.y });
+      this.$store.commit("updateMousePosition", { x: e.pageX, y: e.pageY });
     }
   }
 };

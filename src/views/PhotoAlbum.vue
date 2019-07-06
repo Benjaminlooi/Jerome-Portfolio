@@ -48,7 +48,7 @@
 </template>
 
 <script>
-import MenuIcon from "@/components/MenuIcon";
+import MenuIcon from "@/components/TheMenuIcon";
 import { db } from "@/plugins/firebase";
 const axios = require("axios");
 

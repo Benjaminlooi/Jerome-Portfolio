@@ -1,14 +1,14 @@
 <template>
   <div id="app">
-    <Loading></Loading>
+    <Loading />
     <Menu />
     <router-view />
   </div>
 </template>
 
 <script>
-import Loading from "@/components/Loading";
-import Menu from "@/components/Menu";
+import Loading from "@/components/TheLoading";
+import Menu from "@/components/TheMenu";
 
 export default {
   components: {
