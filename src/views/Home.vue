@@ -1,6 +1,6 @@
 <template>
   <transition name="intro-first">
-    <div class="home" v-if="show" @mousemove="updateMousePosition">
+    <div class="home" v-if="showCustomCursor" @mousemove="updateMousePosition">
       <div>
         <IntroFirst></IntroFirst>
         <IntroSecond/>
@@ -20,15 +20,15 @@ export default {
     IntroSecond
   },
   data: () => ({
-    show: true
+    showCustomCursor: true
   }),
   computed: {},
   watch: {},
   created() {
     Event.$on("introShow", () => {
-      this.show = false;
+      this.showCustomCursor = false;
       setTimeout(() => {
-        this.show = true;
+        this.showCustomCursor = true;
       }, 50);
     });
   },

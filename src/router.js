@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from './views/Home.vue'
 import PhotoAlbum from "./views/PhotoAlbum.vue"
 import BreakupCountdown from "./views/BreakupCountdown.vue"
+import LoveLife from "./views/LoveLife.vue"
 
 Vue.use(Router)
 
@@ -24,6 +25,11 @@ export default new Router({
       path: '/countdown',
       name: 'countdown',
       component: BreakupCountdown
+    },
+    {
+      path: '/lovelife',
+      name: 'lovelife',
+      component: LoveLife
     },
     // {
     //   path: '/about',
