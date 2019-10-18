@@ -1,7 +1,7 @@
 <template>
   <div>
     <MenuIcon />
-    <div id="love-life" class="container mx-auto mt-4">
+    <div id="love-life" class="container px-2 sm:mx-auto mt-4">
       <div class="flex">
         <button
           @click="page = 0"

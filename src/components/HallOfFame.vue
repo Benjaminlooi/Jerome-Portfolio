@@ -2,7 +2,7 @@
   <div id="hall-of-fame">
     <h1 class="text-2xl my-4">Hall of fame</h1>
     <div class="flex flex-wrap -mx-2">
-      <div v-for="(list, index) in lists" :key="index" class="w-1/4 px-2 mb-4">
+      <div v-for="(list, index) in lists" :key="index" class="w-full sm:w-1/2 md:w-1/4 px-2 mb-4">
         <div class="rounded overflow-hidden shadow-lg">
           <div class="w-full h-64 relative">
             <div
