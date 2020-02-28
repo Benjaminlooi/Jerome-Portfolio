@@ -7,6 +7,7 @@
 </template>
 
 <script>
+//
 import Loading from "@/components/TheLoading";
 import Menu from "@/components/TheMenu";
 
