@@ -55,17 +55,20 @@
         </li>
       </ul>
     </div>
+    <TheScrollTip />
   </div>
 </template>
 
 <script>
 import { mapState } from "vuex";
 import MenuIcon from "@/components/TheMenuIcon";
+import TheScrollTip from "@/components/TheScrollTip";
 
 export default {
   name: "IntroFirst",
   components: {
-    MenuIcon
+    MenuIcon,
+    TheScrollTip
   },
   data: () => ({
     //

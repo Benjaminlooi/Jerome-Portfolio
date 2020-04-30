@@ -3,7 +3,7 @@
     <div class="home" v-if="showCustomCursor" @mousemove="updateMousePosition">
       <div>
         <IntroFirst></IntroFirst>
-        <IntroSecond/>
+        <IntroSecond />
       </div>
     </div>
   </transition>
