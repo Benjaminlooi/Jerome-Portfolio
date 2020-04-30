@@ -4,6 +4,7 @@ import Home from './views/Home.vue'
 import PhotoAlbum from "./views/PhotoAlbum.vue"
 import BreakupCountdown from "./views/BreakupCountdown.vue"
 import LoveLife from "./views/LoveLife.vue"
+import MppCampaign from "./views/MppCampaign.vue"
 
 Vue.use(Router)
 
@@ -30,6 +31,11 @@ export default new Router({
       path: '/lovelife',
       name: 'lovelife',
       component: LoveLife
+    },
+    {
+      path: '/mpp-campaign',
+      name: 'MPP Campaign',
+      component: MppCampaign
     },
     // {
     //   path: '/about',
