@@ -1,8 +1,9 @@
-import firebase from "firebase/app";
-import "firebase/firestore";
-import "firebase/storage";
+import firebase from "firebase/compat/app";
+import "firebase/compat/firestore";
+import { initializeApp } from "firebase/app";
+import { getDatabase } from "firebase/database";
 
-var firebaseConfig = {
+const firebaseConfig = {
   apiKey: "AIzaSyA9h8Ujc65cpS3od3sR2-nDl28JxO2pBuE",
   authDomain: "r-jerome.firebaseapp.com",
   databaseURL: "https://r-jerome.firebaseio.com",
@@ -13,6 +14,9 @@ var firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+export const app = initializeApp(firebaseConfig);
 
-export const db = firebase.firestore();
-export const storage = firebase.storage();
+export const firestore = firebase.firestore();
+
+// Get a reference to the database service
+export const database = getDatabase(app);

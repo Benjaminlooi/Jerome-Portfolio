@@ -13,12 +13,18 @@
         <button
           class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded"
           @click="pickImage"
-        >Upload</button>
+        >
+          Upload
+        </button>
         <p v-if="isLoading" class="loading-text m-auto">Loading</p>
       </div>
     </div>
     <div class="images-container mx-5">
-      <div class="isRayImage w-full mb-5" v-for="(image, index) in imagesUrl" :key="index">
+      <div
+        class="isRayImage w-full mb-5"
+        v-for="(image, index) in imagesUrl"
+        :key="index"
+      >
         <img :src="image.link" alt />
       </div>
     </div>
@@ -28,19 +34,23 @@
     >
       <div
         class="flex flex-col w-full max-w-sm max-h-screen bg-white rounded shadow-lg overflow-y-scroll"
-        style="overflow-wrap: break-word;"
+        style="overflow-wrap: break-word"
       >
         <img :src="this.imageURL" />
         <div class="px-6 pt-4 pb-8">
-          <div class="font-bold text-xl mb-2">{{this.imageName}}</div>
+          <div class="font-bold text-xl mb-2">{{ this.imageName }}</div>
           <button
             class="bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded mr-3"
             @click="uploadImage"
-          >{{this.uploadingText}}</button>
+          >
+            {{ this.uploadingText }}
+          </button>
           <button
             class="bg-gray-500 hover:bg-gray-400 text-white font-bold py-2 px-4 border-b-4 border-gray-700 hover:border-gray-500 rounded"
             @click="closeModal"
-          >Cancel</button>
+          >
+            Cancel
+          </button>
         </div>
       </div>
     </div>
@@ -49,12 +59,12 @@
 
 <script>
 import MenuIcon from "@/components/TheMenuIcon";
-import { db } from "@/plugins/firebase";
+import { firestore } from "@/plugins/firebase";
 const axios = require("axios");
 
 export default {
   components: {
-    MenuIcon
+    MenuIcon,
   },
   data: () => ({
     isLoading: true,
@@ -62,7 +72,7 @@ export default {
     uploadingText: "Upload",
     imageName: "",
     imageURL: "",
-    imagesUrl: []
+    imagesUrl: [],
   }),
   created() {
     this.getImages();
@@ -115,13 +125,14 @@ export default {
       axios
         .post(imgurUploadApiUrl, fd, {
           headers: {
-            Authorization: "Client-ID " + clientID
-          }
+            Authorization: "Client-ID " + clientID,
+          },
         })
-        .then(res => {
+        .then((res) => {
           // console.log(res.data.data)
           const r = res.data.data;
-          db.collection("images_imgur")
+          firestore
+            .collection("images_imgur")
             .doc(r.id)
             .set({
               name: r.name,
@@ -132,7 +143,7 @@ export default {
               size: r.size,
               deletehash: r.deletehash,
               link: r.link,
-              timestamp: Date.now()
+              timestamp: Date.now(),
             })
             .then(() => {
               this.uploadModal = false;
@@ -141,7 +152,7 @@ export default {
               this.getImages();
             });
         })
-        .catch(err => {
+        .catch((err) => {
           console.log("Error: ", err);
         });
     },
@@ -149,10 +160,11 @@ export default {
       this.imagesUrl = [];
       this.isLoading = true;
       let imagesArr = [];
-      db.collection("images_imgur")
+      firestore
+        .collection("images_imgur")
         .get()
-        .then(snap => {
-          snap.forEach(doc => {
+        .then((snap) => {
+          snap.forEach((doc) => {
             imagesArr.push(doc.data());
           });
           this.imagesUrl = imagesArr;
@@ -164,8 +176,8 @@ export default {
       this.imageURL = "";
       this.imageFile = "";
       this.uploadingText = "Upload";
-    }
-  }
+    },
+  },
 };
 </script>
 

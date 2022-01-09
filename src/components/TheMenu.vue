@@ -12,11 +12,16 @@
           <img src="../assets/close.svg" alt />
         </div>
         <div class="menu-container">
-          <ul class="menu-links" :class="{'menu-link-leave': leaving}" v-if="showMenuLinks" @click="closeMenu">
+          <ul
+            class="menu-links"
+            :class="{ 'menu-link-leave': leaving }"
+            v-if="showMenuLinks"
+            @click="closeMenu"
+          >
             <!-- <transition name="menu-links-transition"  @after-leave="closeMenu"> -->
             <li v-for="link in links" :key="link.name">
               <router-link :to="link.path">
-                <span>{{link.name}}</span>
+                <span>{{ link.name }}</span>
               </router-link>
             </li>
             <!-- </transition> -->
@@ -31,42 +36,42 @@
 export default {
   data: () => ({
     mouse: {
-      menu_icon_hover: false
+      menu_icon_hover: false,
     },
     showMenuLinks: false,
     leaving: false,
     links: [
       {
         path: "/",
-        name: "HOME"
+        name: "HOME",
       },
       {
         path: "photos",
-        name: "PHOTO ALBUM"
+        name: "PHOTO ALBUM",
       },
       {
         path: "countdown",
-        name: "COUNTDOWN"
+        name: "COUNTDOWN",
       },
       {
         path: "lovelife",
-        name: "LOVE LIFE"
+        name: "LOVE LIFE",
       },
       {
         path: "mpp-campaign",
-        name: "MPP Campaign"
-      }
-    ]
+        name: "MPP Campaign",
+      },
+    ],
   }),
   computed: {
     menu_icon_hover_effect() {
       return {
-        hover: this.mouse.menu_icon_hover
+        hover: this.mouse.menu_icon_hover,
       };
     },
-    menuIsShow: function() {
+    menuIsShow: function () {
       return this.$store.state.menuIsShow;
-    }
+    },
   },
   created() {
     // console.log(this.$refs.menuLink)
@@ -74,13 +79,13 @@ export default {
   methods: {
     closeMenu() {
       this.leaving = true;
-      setTimeout(()=>{
+      setTimeout(() => {
         this.$store.commit("closeMenu");
         this.leaving = false;
         this.showMenuLinks = false;
-      },1)
-    }
-  }
+      }, 1);
+    },
+  },
 };
 </script>
 
@@ -117,6 +122,7 @@ ul.menu-links {
   line-height: 0.95em;
 
   span {
+    color: white;
     display: inline-block;
     transition: transform 0.6s ease-out;
     transform-origin: center left;
@@ -147,7 +153,7 @@ ul.menu-links {
   }
 }
 
-ul.menu-link-leave li{
+ul.menu-link-leave li {
   animation: fade-slide-leave 0.4s ease-out both;
 }
 @keyframes fade-slide-leave {
@@ -194,4 +200,3 @@ ul.menu-link-leave li{
   transform: translateY(-100vh);
 }
 </style>
-

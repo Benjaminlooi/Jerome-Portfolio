@@ -3,6 +3,7 @@ import App from './App.vue'
 import router from './router'
 import store from './store'
 import '@/assets/css/tailwind.css'
+import vuetify from './plugins/vuetify'
 
 Vue.config.productionTip = false
 
@@ -11,5 +12,6 @@ window.Event = new Vue();
 new Vue({
   router,
   store,
+  vuetify,
   render: h => h(App)
 }).$mount('#app')
