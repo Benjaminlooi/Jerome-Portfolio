@@ -19,27 +19,27 @@ export default {
   name: "home",
   components: {
     IntroFirst,
-    MppSectionManifesto
+    MppSectionManifesto,
     // IntroSecond
   },
   data: () => ({
-    showCustomCursor: true
+    showCustomCursor: true,
   }),
   computed: {},
   watch: {},
   created() {
-    Event.$on("introShow", () => {
-      this.showCustomCursor = false;
-      setTimeout(() => {
-        this.showCustomCursor = true;
-      }, 50);
-    });
+    // Event.$on("introShow", () => {
+    //   this.showCustomCursor = false;
+    //   setTimeout(() => {
+    //     this.showCustomCursor = true;
+    //   }, 50);
+    // });
   },
   methods: {
     updateMousePosition(e) {
       this.$store.commit("updateMousePosition", { x: e.pageX, y: e.pageY });
-    }
-  }
+    },
+  },
 };
 </script>
 
