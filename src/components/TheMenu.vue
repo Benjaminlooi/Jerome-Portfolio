@@ -50,10 +50,6 @@ export default {
         name: "PHOTO ALBUM",
       },
       {
-        path: "countdown",
-        name: "COUNTDOWN",
-      },
-      {
         path: "lovelife",
         name: "LOVE LIFE",
       },

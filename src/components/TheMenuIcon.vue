@@ -1,7 +1,7 @@
 <template>
   <div
     class="menu-icon"
-    :class="{'no-cursor': noCursor}"
+    :class="{ 'no-cursor': noCursor }"
     @mouseover="toggleHoverStrong(true)"
     @mouseleave="toggleHoverStrong(false)"
     @click="showMenu"
@@ -14,8 +14,8 @@
 export default {
   props: {
     noCursor: {
-      default: false
-    }
+      default: false,
+    },
   },
   // data: () => ({
   // }),
@@ -25,8 +25,8 @@ export default {
     },
     showMenu() {
       this.$store.commit("openMenu");
-    }
-  }
+    },
+  },
 };
 </script>
 
@@ -38,6 +38,7 @@ export default {
   transform: scale(0.8);
   transform-origin: right top;
   cursor: pointer;
+  z-index: 99;
 }
 .no-cursor {
   cursor: none;
@@ -45,8 +46,8 @@ export default {
 .menu-icon img {
   width: 40px;
 }
-@media only screen and (max-width: 600px){
-  .menu-icon{
+@media only screen and (max-width: 600px) {
+  .menu-icon {
     top: 20px;
     right: 25px;
   }
