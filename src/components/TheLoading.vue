@@ -17,16 +17,16 @@
 <script>
 export default {
   computed: {
-    isLoading: function() {
+    isLoading: function () {
       return this.$store.state.isLoading;
-    }
+    },
   },
   methods: {
     beforeLeave() {
       // console.log("running before leave");
-      Event.$emit("introShow");
-    }
-  }
+      // this.$emit("introShow");
+    },
+  },
 };
 </script>
 

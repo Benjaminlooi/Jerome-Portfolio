@@ -6,11 +6,12 @@
   /></v-app>
 </template>
 
-<script>
-import Loading from "@/components/TheLoading";
-import Menu from "@/components/TheMenu";
+<script lang="ts">
+import Loading from "@/components/TheLoading.vue";
+import Menu from "@/components/TheMenu.vue";
+import Vue from "vue";
 
-export default {
+export default Vue.extend({
   name: "App",
 
   components: {
@@ -18,7 +19,7 @@ export default {
     Menu,
   },
   computed: {},
-  created() {
+  created(): void {
     let image = new Image();
     image.src = require("./assets/jerome_bg.jpg");
     image.onload = () => {
@@ -29,5 +30,5 @@ export default {
   data: () => ({
     //
   }),
-};
+});
 </script>
