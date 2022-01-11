@@ -10,8 +10,8 @@
 </template>
 
 <script>
-import IntroFirst from "@/components/HomeIntroFirst";
-import IntroSecond from "@/components/HomeIntroSecond";
+import IntroFirst from "@/components/Home/HomeIntroFirst";
+import IntroSecond from "@/components/Home/HomeIntroSecond";
 
 export default {
   name: "home",

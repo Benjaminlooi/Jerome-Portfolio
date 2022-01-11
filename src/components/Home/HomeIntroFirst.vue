@@ -1,6 +1,10 @@
 <template>
   <div class="intro-first">
-    <span class="mouse_deco" :style="mouse_cursor" :class="mouse_cursor_effect"></span>
+    <span
+      class="mouse_deco"
+      :style="mouse_cursor"
+      :class="mouse_cursor_effect"
+    ></span>
     <div class="main-copy">
       <span ref="spans" class="spanses">
         <span>I</span>
@@ -43,14 +47,20 @@
     <MenuIcon noCursor="true"></MenuIcon>
     <div class="social-medias">
       <ul>
-        <li @mouseover="mouse.hover_medium = true" @mouseleave="mouse.hover_medium = false">
+        <li
+          @mouseover="mouse.hover_medium = true"
+          @mouseleave="mouse.hover_medium = false"
+        >
           <a href="https://www.facebook.com/rayymond.thomas">
-            <img src="../assets/facebook-logo.svg" alt />
+            <img src="@/assets/facebook-logo.svg" alt />
           </a>
         </li>
-        <li @mouseover="mouse.hover_medium = true" @mouseleave="mouse.hover_medium = false">
+        <li
+          @mouseover="mouse.hover_medium = true"
+          @mouseleave="mouse.hover_medium = false"
+        >
           <a href="https://www.instagram.com/rayymond.jpg/">
-            <img src="../assets/instagram.svg" alt />
+            <img src="@/assets/instagram.svg" alt />
           </a>
         </li>
       </ul>
@@ -68,35 +78,35 @@ export default {
   name: "IntroFirst",
   components: {
     MenuIcon,
-    TheScrollTip
+    TheScrollTip,
   },
   data: () => ({
     //
   }),
   computed: {
     ...mapState({
-      mouse: state => state.mouse
+      mouse: (state) => state.mouse,
     }),
     mouse_cursor() {
       return {
         width: this.mouse.width + "px",
         height: this.mouse.height + "px",
         left: this.mouse.x - this.mouse.width / 2 + "px",
-        top: this.mouse.y - this.mouse.height / 2 + "px"
+        top: this.mouse.y - this.mouse.height / 2 + "px",
       };
     },
-    mouse_cursor_effect: function() {
+    mouse_cursor_effect: function () {
       return {
         mouse_deco_enlarge_medium: this.mouse.hover_medium,
-        mouse_deco_enlarge_strong: this.mouse.hover_strong
+        mouse_deco_enlarge_strong: this.mouse.hover_strong,
       };
-    }
+    },
   },
   created() {},
   mounted() {
     // console.log(this.$refs);
   },
-  methods: {}
+  methods: {},
 };
 </script>
 
@@ -106,7 +116,7 @@ export default {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-image: url("../assets/jerome_bg.jpg");
+  background-image: url("~/assets/jerome_bg.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -119,7 +129,7 @@ export default {
 }
 .intro-first::before {
   content: "";
-  background: url("../assets/noise3.gif");
+  background: url("~/assets/noise3.gif");
   opacity: 0.15;
   position: absolute;
   top: 0;
@@ -254,4 +264,3 @@ export default {
   }
 }
 </style>
-

@@ -1,12 +1,20 @@
 <template>
   <div class="intro-first">
-    <span class="mouse_deco" :style="mouse_cursor" :class="mouse_cursor_effect"></span>
+    <span
+      class="mouse_deco"
+      :style="mouse_cursor"
+      :class="mouse_cursor_effect"
+    ></span>
     <div class="main-copy">
       <span ref="spans" class="spanses">
         <div v-for="(line, index) in heroMessage" :key="index">
-          <span v-for="(char, index) in line" :key="index" class="charInSpanses">
+          <span
+            v-for="(char, index) in line"
+            :key="index"
+            class="charInSpanses"
+          >
             <template v-if="char == ' '">&nbsp;</template>
-            <template v-else>{{char}}</template>
+            <template v-else>{{ char }}</template>
           </span>
         </div>
       </span>
@@ -16,7 +24,10 @@
     <MenuIcon noCursor="true"></MenuIcon>
     <div class="social-medias">
       <ul>
-        <li @mouseover="mouse.hover_medium = true" @mouseleave="mouse.hover_medium = false">
+        <li
+          @mouseover="mouse.hover_medium = true"
+          @mouseleave="mouse.hover_medium = false"
+        >
           <a href="https://www.facebook.com/rayymond.thomas">
             <svg
               width="14px"
@@ -29,13 +40,22 @@
               <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
               <title>facebook</title>
               <desc>Created with Sketch.</desc>
-              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g
+                id="Page-1"
+                stroke="none"
+                stroke-width="1"
+                fill="none"
+                fill-rule="evenodd"
+              >
                 <g
                   class="social-icons"
                   transform="translate(-1614.000000, -606.000000)"
                   fill="#303030"
                 >
-                  <g id="facebook-logo" transform="translate(1614.000000, 606.000000)">
+                  <g
+                    id="facebook-logo"
+                    transform="translate(1614.000000, 606.000000)"
+                  >
                     <path
                       d="M12.6572608,0.00505390836 L9.5074124,0 C5.96866577,0 3.68177224,2.34627695 3.68177224,5.9777628 L3.68177224,8.73391173 L0.514740566,8.73391173 C0.241071429,8.73391173 0.0194575472,8.9557783 0.0194575472,9.22944744 L0.0194575472,13.2227931 C0.0194575472,13.4964623 0.241324124,13.7180761 0.514740566,13.7180761 L3.68177224,13.7180761 L3.68177224,23.7945586 C3.68177224,24.0682278 3.90338612,24.2898416 4.17705526,24.2898416 L8.30913073,24.2898416 C8.58279987,24.2898416 8.80441375,24.0679751 8.80441375,23.7945586 L8.80441375,13.7180761 L12.5074124,13.7180761 C12.7810815,13.7180761 13.0026954,13.4964623 13.0026954,13.2227931 L13.0042116,9.22944744 C13.0042116,9.09804582 12.9519036,8.9722035 12.8591644,8.87921159 C12.7664252,8.78621968 12.6400775,8.73391173 12.5086759,8.73391173 L8.80441375,8.73391173 L8.80441375,6.39748989 C8.80441375,5.27451146 9.07201819,4.70443059 10.534872,4.70443059 L12.6567554,4.70367251 C12.9301718,4.70367251 13.1517857,4.48180593 13.1517857,4.20838949 L13.1517857,0.500336927 C13.1517857,0.227173181 12.9304245,0.00555929919 12.6572608,0.00505390836 Z"
                       id="Path"
@@ -46,7 +66,10 @@
             </svg>
           </a>
         </li>
-        <li @mouseover="mouse.hover_medium = true" @mouseleave="mouse.hover_medium = false">
+        <li
+          @mouseover="mouse.hover_medium = true"
+          @mouseleave="mouse.hover_medium = false"
+        >
           <a href="https://www.instagram.com/rayymond.jpg/">
             <svg
               width="23px"
@@ -59,13 +82,22 @@
               <!-- Generator: Sketch 52.5 (67469) - http://www.bohemiancoding.com/sketch -->
               <title>instagram</title>
               <desc>Created with Sketch.</desc>
-              <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+              <g
+                id="Page-1"
+                stroke="none"
+                stroke-width="1"
+                fill="none"
+                fill-rule="evenodd"
+              >
                 <g
                   class="social-icons"
                   transform="translate(-1609.000000, -744.000000)"
                   fill="#282828"
                 >
-                  <g id="instagram" transform="translate(1609.000000, 744.000000)">
+                  <g
+                    id="instagram"
+                    transform="translate(1609.000000, 744.000000)"
+                  >
                     <path
                       d="M15.8125,0 L7.1875,0 C3.2185625,0 0,3.2185625 0,7.1875 L0,15.8125 C0,19.7814375 3.2185625,23 7.1875,23 L15.8125,23 C19.7814375,23 23,19.7814375 23,15.8125 L23,7.1875 C23,3.2185625 19.7814375,0 15.8125,0 Z M20.84375,15.8125 C20.84375,18.586875 18.586875,20.84375 15.8125,20.84375 L7.1875,20.84375 C4.413125,20.84375 2.15625,18.586875 2.15625,15.8125 L2.15625,7.1875 C2.15625,4.413125 4.413125,2.15625 7.1875,2.15625 L15.8125,2.15625 C18.586875,2.15625 20.84375,4.413125 20.84375,7.1875 L20.84375,15.8125 Z"
                       id="Shape"
@@ -100,7 +132,7 @@ export default {
   name: "IntroFirst",
   components: {
     MenuIcon,
-    TheScrollTip
+    TheScrollTip,
   },
   data: () => ({
     heroMessage: [
@@ -109,27 +141,27 @@ export default {
       "candidate #4",
       "for the",
       "upcoming",
-      "MPP election"
-    ]
+      "MPP election",
+    ],
   }),
   computed: {
     ...mapState({
-      mouse: state => state.mouse
+      mouse: (state) => state.mouse,
     }),
     mouse_cursor() {
       return {
         width: this.mouse.width + "px",
         height: this.mouse.height + "px",
         left: this.mouse.x - this.mouse.width / 2 + "px",
-        top: this.mouse.y - this.mouse.height / 2 + "px"
+        top: this.mouse.y - this.mouse.height / 2 + "px",
       };
     },
-    mouse_cursor_effect: function() {
+    mouse_cursor_effect: function () {
       return {
         mouse_deco_enlarge_medium: this.mouse.hover_medium,
-        mouse_deco_enlarge_strong: this.mouse.hover_strong
+        mouse_deco_enlarge_strong: this.mouse.hover_strong,
       };
-    }
+    },
   },
   created() {},
   mounted() {
@@ -144,19 +176,19 @@ export default {
         {
           opacity: 0,
           filter: "blur(10px)",
-          x: function() {
+          x: function () {
             return 300 - Math.random() * 600;
           },
-          y: function() {
+          y: function () {
             return 300 - Math.random() * 600;
           },
-          ease: Back.easeOut.config(0.6)
+          ease: Back.easeOut.config(0.6),
         },
         0.1
       );
     }, 1);
   },
-  methods: {}
+  methods: {},
 };
 </script>
 
@@ -166,7 +198,7 @@ export default {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-image: url("../assets/DSC00968-min-edited.jpg");
+  background-image: url("~/assets/DSC00968-min-edited.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 0 50%;
@@ -174,7 +206,7 @@ export default {
 }
 .intro-first::before {
   content: "";
-  background: url("../assets/noise3.gif");
+  background: url("~/assets/noise3.gif");
   opacity: 0.15;
   position: absolute;
   top: 0;
@@ -306,4 +338,3 @@ export default {
   }
 }
 </style>
-

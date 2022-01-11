@@ -11,8 +11,8 @@
 </template>
 
 <script>
-import IntroFirst from "@/components/MppIntroFirst";
-import MppSectionManifesto from "@/components/MppSectionManifesto";
+import IntroFirst from "@/components/MppCampaign/MppIntroFirst";
+import MppSectionManifesto from "@/components/MppCampaign/MppSectionManifesto";
 // import IntroSecond from "@/components/HomeIntroSecond";
 
 export default {

@@ -9,6 +9,9 @@
     "dev": "SET \"NODE_ENV=DEV\" && electron app.js"
   },
   "dependencies": {
+    "@vue/composition-api": "^1.4.3",
+    "@vuelidate/core": "^2.0.0-alpha.33",
+    "@vuelidate/validators": "^2.0.0-alpha.26",
     "axios": "^0.21.2",
     "core-js": "^2.6.12",
     "firebase": "^9.6.2",

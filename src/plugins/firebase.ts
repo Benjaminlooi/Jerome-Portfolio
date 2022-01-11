@@ -1,7 +1,7 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import { initializeApp } from "firebase/app";
-import { getDatabase } from "firebase/database";
+import { getFirestore } from "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyA9h8Ujc65cpS3od3sR2-nDl28JxO2pBuE",
@@ -14,9 +14,9 @@ const firebaseConfig = {
 };
 // Initialize Firebase
 firebase.initializeApp(firebaseConfig);
+// v9
 export const app = initializeApp(firebaseConfig);
 
 export const firestore = firebase.firestore();
 
-// Get a reference to the database service
-export const database = getDatabase(app);
+export const firestore9 = getFirestore();

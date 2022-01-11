@@ -29,7 +29,7 @@
 <script>
 import MenuIcon from "@/components/TheMenuIcon";
 import GirlfriendsTimeline from "../components/GirlfriendsTimeline.vue";
-import LoveLifeVoting from "../components/LoveLifeVoting.vue";
+import LoveLifeVoting from "../components/LoveLife/LoveLifeVoting.vue";
 export default {
   components: {
     MenuIcon,

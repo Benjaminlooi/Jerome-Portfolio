@@ -19,6 +19,8 @@
         </template>
 
         <v-card :color="girlfriendHistory.color" dark>
+          <span class="pa-2" v-text="girlfriendHistory.date"></span>
+
           <v-img
             contain
             max-height="250"
@@ -74,7 +76,7 @@ export default {
   data: () => ({
     girlfriendHistoryList: [
       {
-        title: "Charlene",
+        title: "Charlene Lionel",
         date: "Sept 2019 - Oct 2019",
         imgUrl: "charlene.jpg",
         color: "pink",
@@ -86,7 +88,7 @@ export default {
         color: "cyan",
       },
       {
-        title: "Apu",
+        title: "A.P.U.",
         date: "Nov 2019 - Dec 2019",
         imgUrl: "girl_portrait_1.jpg",
         color: "green",
