@@ -94,10 +94,21 @@ export default {
     return { v$: useVuelidate() };
   },
   data: () => ({
+    dialog: false,
+    loading3: false,
+
     name: '',
     nationality: '',
     description: '',
   }),
+  computed: {
+    nameErrors() {
+      const errors = [];
+      if (!this.$v.name.$dirty) return errors;
+      !this.$v.name.required && errors.push('Name is required.');
+      return errors;
+    },
+  },
   validations() {
     return {
       name: { required },

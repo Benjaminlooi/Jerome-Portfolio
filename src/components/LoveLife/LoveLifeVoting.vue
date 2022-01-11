@@ -46,6 +46,8 @@
         </v-card>
       </v-col>
     </v-row>
+
+    <NewCandidateDialog />
   </div>
 </template>
 
@@ -58,12 +60,13 @@ import {
   updateDoc,
 } from '@firebase/firestore';
 import { firestore9 } from '@/plugins/firebase';
+import NewCandidateDialog from './NewCandidateDialog.vue';
 
 export default {
+  components: { NewCandidateDialog },
   data: () => ({
     destroyListOfCandidatesSnapshot: null,
     listOfCandidates: [],
-    dialog: false,
   }),
   methods: {
     async onClickVote(candidateId) {
