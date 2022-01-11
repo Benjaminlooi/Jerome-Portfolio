@@ -42,20 +42,20 @@ export default {
     leaving: false,
     links: [
       {
-        path: "/",
-        name: "HOME",
+        path: '/',
+        name: 'HOME',
       },
       {
-        path: "photos",
-        name: "PHOTO ALBUM",
+        path: 'photos',
+        name: 'PHOTO ALBUM',
       },
       {
-        path: "lovelife",
-        name: "LOVE LIFE",
+        path: 'lovelife',
+        name: 'LOVE LIFE',
       },
       {
-        path: "mpp-campaign",
-        name: "MPP Campaign",
+        path: 'mpp-campaign',
+        name: 'MPP Campaign',
       },
     ],
   }),
@@ -76,7 +76,7 @@ export default {
     closeMenu() {
       this.leaving = true;
       setTimeout(() => {
-        this.$store.commit("closeMenu");
+        this.$store.commit('closeMenu');
         this.leaving = false;
         this.showMenuLinks = false;
       }, 1);

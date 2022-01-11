@@ -123,13 +123,13 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
-import MenuIcon from "@/components/TheMenuIcon";
-import TheScrollTip from "@/components/TheScrollTip";
-import { TimelineMax, Back } from "gsap";
+import { mapState } from 'vuex';
+import MenuIcon from '@/components/TheMenuIcon';
+import TheScrollTip from '@/components/TheScrollTip';
+import { TimelineMax, Back } from 'gsap';
 
 export default {
-  name: "IntroFirst",
+  name: 'IntroFirst',
   components: {
     MenuIcon,
     TheScrollTip,
@@ -137,11 +137,11 @@ export default {
   data: () => ({
     heroMessage: [
       "I'm Rayymond",
-      "Thomas",
-      "candidate #4",
-      "for the",
-      "upcoming",
-      "MPP election",
+      'Thomas',
+      'candidate #4',
+      'for the',
+      'upcoming',
+      'MPP election',
     ],
   }),
   computed: {
@@ -150,10 +150,10 @@ export default {
     }),
     mouse_cursor() {
       return {
-        width: this.mouse.width + "px",
-        height: this.mouse.height + "px",
-        left: this.mouse.x - this.mouse.width / 2 + "px",
-        top: this.mouse.y - this.mouse.height / 2 + "px",
+        width: this.mouse.width + 'px',
+        height: this.mouse.height + 'px',
+        left: this.mouse.x - this.mouse.width / 2 + 'px',
+        top: this.mouse.y - this.mouse.height / 2 + 'px',
       };
     },
     mouse_cursor_effect: function () {
@@ -168,14 +168,14 @@ export default {
     console.log(Math.random() * 300);
     setTimeout(() => {
       let t1 = new TimelineMax();
-      let spanses = document.querySelectorAll(".charInSpanses");
+      let spanses = document.querySelectorAll('.charInSpanses');
 
       t1.staggerFrom(
         spanses,
         1,
         {
           opacity: 0,
-          filter: "blur(10px)",
+          filter: 'blur(10px)',
           x: function () {
             return 300 - Math.random() * 600;
           },
@@ -184,7 +184,7 @@ export default {
           },
           ease: Back.easeOut.config(0.6),
         },
-        0.1
+        0.1,
       );
     }, 1);
   },
@@ -198,15 +198,15 @@ export default {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-image: url("~/assets/DSC00968-min-edited.jpg");
+  background-image: url('~/assets/DSC00968-min-edited.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 0 50%;
   cursor: none;
 }
 .intro-first::before {
-  content: "";
-  background: url("~/assets/noise3.gif");
+  content: '';
+  background: url('~/assets/noise3.gif');
   opacity: 0.15;
   position: absolute;
   top: 0;
@@ -235,7 +235,7 @@ export default {
   position: absolute;
   top: 80px;
   left: 80px;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   text-transform: uppercase;
   line-height: 0.9em;
   font-size: 7.3vh;
@@ -243,7 +243,7 @@ export default {
   color: #303030;
 }
 .name {
-  font-family: "Times New Roman", Times, serif;
+  font-family: 'Times New Roman', Times, serif;
   position: absolute;
   left: 80px;
   bottom: 35px;

@@ -1,17 +1,17 @@
 <template>
   <div>
     <v-row justify="center">
-      <v-col cols="12" sm="6" md="4" class="py-8 text-center"
-        >As R.Jerome has embraced celibacy and left his love life behind. We get
+      <v-col cols="12" sm="6" md="4" class="py-8 text-center">
+        As R.Jerome has embraced celibacy and left his love life behind. We get
         to vote for his next love of his life among a few handpicked candidates
-        by the Pope.</v-col
-      >
+        by the Pope.
+      </v-col>
     </v-row>
 
     <v-row class="mb-4" justify="center">
-      <v-col cols="12"
-        ><div class="text-h3 text-center">Handpicked Candidates</div></v-col
-      >
+      <v-col cols="12">
+        <div class="text-h3 text-center">Handpicked Candidates</div>
+      </v-col>
       <v-col
         cols="12"
         sm="6"
@@ -44,8 +44,8 @@
             </v-btn>
           </v-card-actions>
         </v-card>
-      </v-col></v-row
-    >
+      </v-col>
+    </v-row>
   </div>
 </template>
 
@@ -56,8 +56,8 @@ import {
   increment,
   onSnapshot,
   updateDoc,
-} from "@firebase/firestore";
-import { firestore9 } from "@/plugins/firebase";
+} from '@firebase/firestore';
+import { firestore9 } from '@/plugins/firebase';
 
 export default {
   data: () => ({
@@ -67,7 +67,7 @@ export default {
   }),
   methods: {
     async onClickVote(candidateId) {
-      const candidateRef = doc(firestore9, "candidates", candidateId);
+      const candidateRef = doc(firestore9, 'candidates', candidateId);
 
       await updateDoc(candidateRef, {
         VoteCount: increment(1),
@@ -76,7 +76,7 @@ export default {
   },
   created() {
     this.destroyListOfCandidatesSnapshot = onSnapshot(
-      collection(firestore9, "candidates"),
+      collection(firestore9, 'candidates'),
       (querySnapshot) => {
         const data = querySnapshot.docs.map((doc) => {
           return {
@@ -86,7 +86,7 @@ export default {
         });
 
         this.listOfCandidates = data;
-      }
+      },
     );
   },
   destroyed() {

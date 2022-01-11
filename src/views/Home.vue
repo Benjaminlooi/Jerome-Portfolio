@@ -10,11 +10,11 @@
 </template>
 
 <script>
-import IntroFirst from "@/components/Home/HomeIntroFirst";
-import IntroSecond from "@/components/Home/HomeIntroSecond";
+import IntroFirst from '@/components/Home/HomeIntroFirst';
+import IntroSecond from '@/components/Home/HomeIntroSecond';
 
 export default {
-  name: "home",
+  name: 'home',
   components: {
     IntroFirst,
     IntroSecond,
@@ -34,7 +34,7 @@ export default {
   },
   methods: {
     updateMousePosition(e) {
-      this.$store.commit("updateMousePosition", { x: e.pageX, y: e.pageY });
+      this.$store.commit('updateMousePosition', { x: e.pageX, y: e.pageY });
     },
   },
 };

@@ -58,9 +58,9 @@
 </template>
 
 <script>
-import MenuIcon from "@/components/TheMenuIcon";
-import { firestore } from "@/plugins/firebase";
-const axios = require("axios");
+import MenuIcon from '@/components/TheMenuIcon';
+import { firestore } from '@/plugins/firebase';
+const axios = require('axios');
 
 export default {
   components: {
@@ -69,9 +69,9 @@ export default {
   data: () => ({
     isLoading: true,
     uploadModal: false,
-    uploadingText: "Upload",
-    imageName: "",
-    imageURL: "",
+    uploadingText: 'Upload',
+    imageName: '',
+    imageURL: '',
     imagesUrl: [],
   }),
   created() {
@@ -93,12 +93,12 @@ export default {
       this.isLoading = true;
       if (file !== undefined) {
         this.imageName = file.name;
-        if (this.imageName.lastIndexOf(".") <= 0) {
+        if (this.imageName.lastIndexOf('.') <= 0) {
           return;
         }
         const fr = new FileReader();
         fr.readAsDataURL(file);
-        fr.addEventListener("load", () => {
+        fr.addEventListener('load', () => {
           this.imageURL = fr.result;
           this.imageFile = file;
           // console.log(this.imageName);
@@ -114,25 +114,25 @@ export default {
       }
     },
     uploadImage() {
-      this.uploadingText = "Uploading...";
-      console.log("Running uploadImage");
-      const imgurUploadApiUrl = "https://api.imgur.com/3/image";
-      const clientID = "04a91bbb323978c";
+      this.uploadingText = 'Uploading...';
+      console.log('Running uploadImage');
+      const imgurUploadApiUrl = 'https://api.imgur.com/3/image';
+      const clientID = '04a91bbb323978c';
       var fd = new FormData();
-      fd.append("image", this.imageFile);
-      fd.append("name", this.imageName);
+      fd.append('image', this.imageFile);
+      fd.append('name', this.imageName);
       // fd.append("type", "URL");
       axios
         .post(imgurUploadApiUrl, fd, {
           headers: {
-            Authorization: "Client-ID " + clientID,
+            Authorization: 'Client-ID ' + clientID,
           },
         })
         .then((res) => {
           // console.log(res.data.data)
           const r = res.data.data;
           firestore
-            .collection("images_imgur")
+            .collection('images_imgur')
             .doc(r.id)
             .set({
               name: r.name,
@@ -153,7 +153,7 @@ export default {
             });
         })
         .catch((err) => {
-          console.log("Error: ", err);
+          console.log('Error: ', err);
         });
     },
     getImages() {
@@ -161,7 +161,7 @@ export default {
       this.isLoading = true;
       let imagesArr = [];
       firestore
-        .collection("images_imgur")
+        .collection('images_imgur')
         .get()
         .then((snap) => {
           snap.forEach((doc) => {
@@ -172,10 +172,10 @@ export default {
         });
     },
     resetImageInputs() {
-      this.imageName = "";
-      this.imageURL = "";
-      this.imageFile = "";
-      this.uploadingText = "Upload";
+      this.imageName = '';
+      this.imageURL = '';
+      this.imageFile = '';
+      this.uploadingText = 'Upload';
     },
   },
 };
@@ -206,7 +206,7 @@ p.loading-text {
   text-align: center;
 }
 .loading-text:after {
-  content: " .";
+  content: ' .';
   animation: dots 1s steps(5, end) infinite;
 }
 

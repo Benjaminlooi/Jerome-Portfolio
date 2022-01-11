@@ -44,9 +44,9 @@
 
       <v-timeline-item color="orange" fill-dot small>
         <template v-slot:opposite>
-          <span :class="`headline font-weight-bold orange--text`"
-            >Jan 2020 - Present</span
-          >
+          <span :class="`headline font-weight-bold orange--text`">
+            Jan 2020 - Present
+          </span>
         </template>
 
         <v-card color="orange" dark>
@@ -56,7 +56,7 @@
             class="bg-white"
           ></v-img>
 
-          <v-card-title class="text-h6"> Embraced Celibacy </v-card-title>
+          <v-card-title class="text-h6">Embraced Celibacy</v-card-title>
           <!-- <v-card-text class="white text--primary">
             <p>
               Lorem ipsum dolor sit amet, no nam oblique veritus. Commune
@@ -76,28 +76,28 @@ export default {
   data: () => ({
     girlfriendHistoryList: [
       {
-        title: "Charlene Lionel",
-        date: "Sept 2019 - Oct 2019",
-        imgUrl: "charlene.jpg",
-        color: "pink",
+        title: 'Charlene Lionel',
+        date: 'Sept 2019 - Oct 2019',
+        imgUrl: 'charlene.jpg',
+        color: 'pink',
       },
       {
-        title: "Lydia",
-        date: "Oct 2019 - Nov 2019",
-        imgUrl: "lydia.jpg",
-        color: "cyan",
+        title: 'Lydia',
+        date: 'Oct 2019 - Nov 2019',
+        imgUrl: 'lydia.jpg',
+        color: 'cyan',
       },
       {
-        title: "A.P.U.",
-        date: "Nov 2019 - Dec 2019",
-        imgUrl: "girl_portrait_1.jpg",
-        color: "green",
+        title: 'A.P.U.',
+        date: 'Nov 2019 - Dec 2019',
+        imgUrl: 'girl_portrait_1.jpg',
+        color: 'green',
       },
       {
-        title: "Kashmeera",
-        date: "Dec 2019 - Jan 2020",
-        imgUrl: "kashmeera.jpg",
-        color: "amber",
+        title: 'Kashmeera',
+        date: 'Dec 2019 - Jan 2020',
+        imgUrl: 'kashmeera.jpg',
+        color: 'amber',
       },
     ],
   }),

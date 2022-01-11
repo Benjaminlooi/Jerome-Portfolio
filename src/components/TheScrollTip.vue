@@ -19,7 +19,7 @@ div#scrollTip {
   box-sizing: content-box;
   animation: scroll-tip-intro 0.3s ease-out;
   &::after {
-    content: "";
+    content: '';
     width: 2px;
     height: 17px;
     display: block;

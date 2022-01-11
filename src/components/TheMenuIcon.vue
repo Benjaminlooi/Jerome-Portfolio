@@ -21,10 +21,10 @@ export default {
   // }),
   methods: {
     toggleHoverStrong(x) {
-      this.$store.commit("toggleHoverStrong", x);
+      this.$store.commit('toggleHoverStrong', x);
     },
     showMenu() {
-      this.$store.commit("openMenu");
+      this.$store.commit('openMenu');
     },
   },
 };

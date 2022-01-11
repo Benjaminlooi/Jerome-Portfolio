@@ -11,12 +11,12 @@
 </template>
 
 <script>
-import IntroFirst from "@/components/MppCampaign/MppIntroFirst";
-import MppSectionManifesto from "@/components/MppCampaign/MppSectionManifesto";
+import IntroFirst from '@/components/MppCampaign/MppIntroFirst';
+import MppSectionManifesto from '@/components/MppCampaign/MppSectionManifesto';
 // import IntroSecond from "@/components/HomeIntroSecond";
 
 export default {
-  name: "home",
+  name: 'home',
   components: {
     IntroFirst,
     MppSectionManifesto,
@@ -37,7 +37,7 @@ export default {
   },
   methods: {
     updateMousePosition(e) {
-      this.$store.commit("updateMousePosition", { x: e.pageX, y: e.pageY });
+      this.$store.commit('updateMousePosition', { x: e.pageX, y: e.pageY });
     },
   },
 };

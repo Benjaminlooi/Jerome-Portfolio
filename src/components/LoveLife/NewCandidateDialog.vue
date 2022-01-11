@@ -11,7 +11,7 @@
           class="ma-2 white--text"
           @click="dialog = true"
         >
-          <v-icon dark> mdi-plus </v-icon>
+          <v-icon dark>mdi-plus</v-icon>
           Propose a new candidate
         </v-btn>
       </div>
@@ -81,10 +81,8 @@
       </v-card-text>
       <v-card-actions>
         <v-spacer></v-spacer>
-        <v-btn color="blue darken-1" text @click="dialog = false">
-          Close
-        </v-btn>
-        <v-btn color="blue darken-1" text @click="dialog = false"> Save </v-btn>
+        <v-btn color="blue darken-1" text @click="dialog = false">Close</v-btn>
+        <v-btn color="blue darken-1" text @click="dialog = false">Save</v-btn>
       </v-card-actions>
     </v-card>
   </v-dialog>
@@ -96,9 +94,9 @@ export default {
     return { v$: useVuelidate() };
   },
   data: () => ({
-    name: "",
-    nationality: "",
-    description: "",
+    name: '',
+    nationality: '',
+    description: '',
   }),
   validations() {
     return {

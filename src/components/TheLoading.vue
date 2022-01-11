@@ -51,7 +51,7 @@ export default {
 .loading-box {
   // display: inline-block;
   margin: auto;
-  font-family: "Anton", sans-serif;
+  font-family: 'Anton', sans-serif;
 }
 .loading-box span {
   display: inline-block;
@@ -144,7 +144,7 @@ p.loading-text {
   text-align: center;
 }
 .loading-text:after {
-  content: " .";
+  content: ' .';
   animation: dots 1s steps(5, end) infinite;
 }
 

@@ -18,26 +18,26 @@
 </template>
 
 <script>
-import { TimelineLite, Back, Elastic, Expo } from "gsap";
+import { TimelineLite, Back, Elastic, Expo } from 'gsap';
 
 export default {
   data: () => ({
     timeline: null,
     textTimeline: null,
     texts: [
-      "BOLD",
-      "DELICIOUS",
-      "GENTLEMAN",
-      "FABULOUS",
-      "STRONG",
-      "AGGRESIVE",
-      "ORDINARY",
-      "HANDSOME",
-      "CHARMING",
-      "ATTRACTIVE",
-      "SEXY",
+      'BOLD',
+      'DELICIOUS',
+      'GENTLEMAN',
+      'FABULOUS',
+      'STRONG',
+      'AGGRESIVE',
+      'ORDINARY',
+      'HANDSOME',
+      'CHARMING',
+      'ATTRACTIVE',
+      'SEXY',
     ],
-    currentText: "BOLD",
+    currentText: 'BOLD',
   }),
   computed: {},
   mounted() {
@@ -61,13 +61,13 @@ export default {
           scale: 0.9,
           opacity: 1,
         },
-        "-=0.5"
+        '-=0.5',
       );
 
     this.timeline
       .to(bubble, 1.1, {
         scale: 1,
-        rotation: "-=16",
+        rotation: '-=16',
         ease: Elastic.easeOut.config(2.5, 0.5),
       })
       .to(
@@ -78,7 +78,7 @@ export default {
           opacity: 0,
           ease: Expo.easeOut,
         },
-        "-=1.1"
+        '-=1.1',
       );
 
     this.textTimeline = new TimelineLite({
@@ -120,7 +120,7 @@ export default {
 .intro-second {
 }
 .bubble {
-  background: url("~/assets/IMG_20180816_163537.png") center no-repeat;
+  background: url('~/assets/IMG_20180816_163537.png') center no-repeat;
   background-size: contain;
   background-color: #272727;
 }

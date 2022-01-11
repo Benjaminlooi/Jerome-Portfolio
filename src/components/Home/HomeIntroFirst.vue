@@ -70,12 +70,12 @@
 </template>
 
 <script>
-import { mapState } from "vuex";
-import MenuIcon from "@/components/TheMenuIcon";
-import TheScrollTip from "@/components/TheScrollTip";
+import { mapState } from 'vuex';
+import MenuIcon from '@/components/TheMenuIcon';
+import TheScrollTip from '@/components/TheScrollTip';
 
 export default {
-  name: "IntroFirst",
+  name: 'IntroFirst',
   components: {
     MenuIcon,
     TheScrollTip,
@@ -89,10 +89,10 @@ export default {
     }),
     mouse_cursor() {
       return {
-        width: this.mouse.width + "px",
-        height: this.mouse.height + "px",
-        left: this.mouse.x - this.mouse.width / 2 + "px",
-        top: this.mouse.y - this.mouse.height / 2 + "px",
+        width: this.mouse.width + 'px',
+        height: this.mouse.height + 'px',
+        left: this.mouse.x - this.mouse.width / 2 + 'px',
+        top: this.mouse.y - this.mouse.height / 2 + 'px',
       };
     },
     mouse_cursor_effect: function () {
@@ -116,7 +116,7 @@ export default {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-image: url("~/assets/jerome_bg.jpg");
+  background-image: url('~/assets/jerome_bg.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
@@ -128,8 +128,8 @@ export default {
   cursor: none;
 }
 .intro-first::before {
-  content: "";
-  background: url("~/assets/noise3.gif");
+  content: '';
+  background: url('~/assets/noise3.gif');
   opacity: 0.15;
   position: absolute;
   top: 0;
@@ -160,7 +160,7 @@ export default {
   position: absolute;
   top: 87px;
   left: 90px;
-  font-family: "Roboto Condensed", sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
   text-transform: uppercase;
   line-height: 0.9em;
   font-size: 8.4vh;
@@ -168,7 +168,7 @@ export default {
   color: #303030;
 }
 .name {
-  font-family: "Times New Roman", Times, serif;
+  font-family: 'Times New Roman', Times, serif;
   position: absolute;
   left: 90px;
   bottom: 35px;
