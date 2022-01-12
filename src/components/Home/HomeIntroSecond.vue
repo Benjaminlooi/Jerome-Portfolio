@@ -120,7 +120,7 @@ export default {
 .intro-second {
 }
 .bubble {
-  background: url('~/assets/IMG_20180816_163537.png') center no-repeat;
+  background: url('~@/assets/IMG_20180816_163537.png') center no-repeat;
   background-size: contain;
   background-color: #272727;
 }

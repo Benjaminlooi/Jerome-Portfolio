@@ -19,7 +19,7 @@
             @click="closeMenu"
           >
             <!-- <transition name="menu-links-transition"  @after-leave="closeMenu"> -->
-            <li v-for="link in links" :key="link.name">
+            <li v-for="link in links" :key="link.name" class="py-1">
               <router-link :to="link.path">
                 <span>{{ link.name }}</span>
               </router-link>
@@ -125,7 +125,7 @@ ul.menu-links {
   }
 
   span:hover {
-    transform: scale(1.1);
+    transform: scale(1.13);
   }
 
   li {

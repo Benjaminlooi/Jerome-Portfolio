@@ -198,7 +198,7 @@ export default {
   width: 100vw;
   height: 100vh;
   overflow: hidden;
-  background-image: url('~/assets/DSC00968-min-edited.jpg');
+  background-image: url('~@/assets/DSC00968-min-edited.jpg');
   background-size: cover;
   background-repeat: no-repeat;
   background-position: 0 50%;
@@ -206,7 +206,7 @@ export default {
 }
 .intro-first::before {
   content: '';
-  background: url('~/assets/noise3.gif');
+  background: url('~@/assets/noise3.gif');
   opacity: 0.15;
   position: absolute;
   top: 0;
